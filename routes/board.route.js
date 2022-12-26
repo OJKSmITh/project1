@@ -8,5 +8,6 @@ router.get('/write', controller.getWrite)
 
 router.post('/write', controller.postWrite)
 
+router.get('/view', controller.view)
 
 module.exports = router

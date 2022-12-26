@@ -20,7 +20,7 @@
         {% for item in list%}
         <tr>
             <td>{{item.idx}}</td>
-            <td>{{item.subject}}</td>
+            <td><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></td>
             <td>{{item.writer}}</td>
             <td>{{item.registerDate}}</td>
             <td>{{item.hit}}</td>
