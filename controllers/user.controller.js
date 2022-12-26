@@ -24,6 +24,6 @@ exports.getInsert = (req, res, next) => {
 }
 
 exports.postInsert = async (req, res, next) => {
-    const insert = await service.insert(req.body.userId, req.body.userPw)
+    const insert = await service.insert(req.body.userId, req.body.userPw, req.body.userName, req.body.nickName, req.body.birth, req.body.gender, req.body.phoneNum, req.body.telNum)
     res.redirect('/user/login')
 }

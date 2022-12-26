@@ -12,7 +12,11 @@ exports.postOne = async (subject, writer, content) => {
 
 exports.findOne = async (idx) => {
     const [result] = await pool.query(`SELECT * FROM board where idx=${idx}`)
-
     return result
 }
 
+exports.postModify = async (idx, subject, content, writer) => {
+    const [result] = await pool.query(`UPDATE board SET subject="${subject}", content="${content}", writer="${writer}" WHERE idx=${idx}`)
+    console.log(result)
+    return result
+}

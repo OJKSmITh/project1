@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Modify page</h2>
+    <form method="post" action="/board/view?idx={{modify.idx}}">
+        <!-- <input type="hidden" name="index" value="{{modify.idx}}"> -->
+        <ul>
+            <li>
+                제목 : <br>
+                <input type="text" name="subject" value="{{modify.subject}}">
+            </li>
+            <li>
+                작성자 : <br>
+                <input type="text" name="writer" value="{{modify.writer}}">
+            </li>
+            <li>
+                내용: <br>
+                <textarea name="content">
+                    {{modify.content}}
+                </textarea>
+            </li>
+        </ul>
+        <button type="submit">완료!</button>
+    </form>
+</body>
+
+</html>

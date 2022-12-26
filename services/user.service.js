@@ -7,7 +7,7 @@ exports.findLogin = async (userId, userPw) => {
     return result
 }
 
-exports.insert = async (userId, userPw) => {
-    const insert = await user.insertRow(userId, userPw)
+exports.insert = async (userId, userPw, userName, nickName, birth, gender, phoneNum, telNum) => {
+    const insert = await user.insertRow(userId, userPw, userName, nickName, birth, gender, phoneNum, telNum)
     return insert
 }
