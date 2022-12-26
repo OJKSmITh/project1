@@ -12,64 +12,94 @@
 
 <body>
     <div id="wrap">
-        <header class="header_wrap">
-            <div class="header">
-                <h1><img src="/public/img/logo.png" alt=""></h1>
-                <h1></h1>
-                <div class="hamburger_btn">
-                    <span class="hamburger num1"></span>
-                    <span class="hamburger num2"></span>
-                    <span class="hamburger num3"></span>
+
+        <div id="joinpage">
+            <h1><img src="/public/img/logo.png" alt=""></h1>
+            <h2>환장의 나라 합류하기</h2>
+            <form method="post" action="/user/join">
+                <div>
+                    <span>아이디</span>
+                    <div>
+                        <input type="text" name="userId">
+                    </div>
+                </div> 
+                <div>
+                    <span>패스워드</span>
+                    <div>
+                        <input type="password" name="userPw">
+                    </div>
                 </div>
-            </div>
-        </header>
-        <div id='gnb' class="gnboff">
-            <div class="gnbtext">환장의 나라 로그인</div>
-            <div>
-                <a href="/user/login">로그인</a>    
-                <a href="/user/join">회원가입</a>
-            </div>
+                <div>
+                    <span>패스워드확인</span>
+                    <div>
+                        <input type="password" name="userPwCheck">
+                    </div>
+                </div>
+                <div>
+                    <span>이름</span>
+                    <div>
+                        <input type="text" name="userName">
+                    </div>
+                </div>
+                <div>
+                    <span>닉네임</span>
+                    <div>
+                        <input type="text" name="nickName">
+                    </div>
+                </div>
+                <div>
+                    <span>생년월일</span>
+                    <div>
+                        <input type="date" id="birth" name="birth"
+                        min="1900-01-01" max="2025-12-31">    
+                    </div>
+                </div>
+                <div>
+                    <span>성별</span>
+                    <div>
+                        <select name="gender" id="gender">
+                            <option value="남자">남자</option>
+                            <option value="여자">여자</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <span>핸드폰번호</span>
+                    <div>
+                        <input type="text" name="phoneNum" placeholder="하이픈을 포함하여 적어주세요"
+                        pattern="[0-9]{3}-[0-9]{3}{4}-[0-9]{4}">
+                    </div>
+                </div>
+                <div>
+                    <span>전화번호</span>
+                    <div>
+                        <select name="locatTelNum" id="locatTelNum">
+                            <option value="02">02</option>
+                            <option value="031">031</option>
+                            <option value="032">032</option>
+                            <option value="033">033</option>
+                            <option value="041">041</option>
+                            <option value="042">042</option>
+                            <option value="043">043</option>
+                            <option value="044">044</option>
+                            <option value="051">051</option>
+                            <option value="052">052</option>
+                            <option value="053">053</option>
+                            <option value="054">054</option>
+                            <option value="055">055</option>
+                            <option value="061">061</option>
+                            <option value="062">062</option>
+                            <option value="063">063</option>
+                            <option value="064">064</option>
+                        </select>
+                        <input type="text" id="telNum" name="telNum" placeholder="번호를 적어주세요">
+                    </div>
+                </div>
+                <button type="submit">완료!</button>
+            </form>
         </div>
-        <h2>회원가입 페이지</h2>
-        <form method="post" action="/user/join">
-            <div>
-                <span>아이디</span>
-                <input type="text" name="userId">
-            </div>
-            <div>
-                <span>패스워드</span>
-                <input type="password" name="userPw">
-            </div>
-            <div>
-                이름 <br>
-                <input type="text" name="userName">
-            </div>
-            <div>
-                닉네임 <br>
-                <input type="text" name="nickName">
-            </div>
-            <div>
-                생년월일 <br>
-                <input type="password" name="birth">
-            </div>
-            <div>
-                성별 <br>
-                <input type="" name="gender">
-            </div>
-            <div>
-                핸드폰번호 <br>
-                <input type="text" name="phoneNum">
-            </div>
-            <div>
-                전화번호 <br>
-                <select name="" id=""></select>
-                <input type="text" name="telNum">
-            </div>
-            <button type="submit">완료!</button>
-        </form>
 
     </div>
-    <script src="/public/js/main.js"></script>
 </body>
 
 </html>
