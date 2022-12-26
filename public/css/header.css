@@ -6,12 +6,18 @@ html {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
+}
+a{
+    text-decoration: none;
+}
+#wrap{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 /* header start */
 .header_wrap{
     background-color: #939393;
-    /* height: 10vh ; */
 }
 .header{
     display: flex;
@@ -19,7 +25,7 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 3rem;
-    height: 10vh;
+    height: 15vh;
 }
 
 .hamburger_btn {
@@ -59,8 +65,8 @@ html {
     background-color: #453a33;
 }
 h1 > img { 
-    height: 8vh;
-    width: 8vh;
+    height: 13vh;
+    width: 13vh;
 }
 
 /* header end */
@@ -82,17 +88,40 @@ h1 > img {
     position:absolute;
     z-index: 999;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     right: 0vw;
     width: 30vw;
-    height: 90vh;
+    height: 85vh;
     opacity: 1;
     transition: 1s;
+}
+#gnb > div > a {
+    display: inline-block;
+    margin: 1rem;
+    font-size: 2rem;
+    padding: 0.7rem 1.4rem;
+    border: 00.15rem solid #939393
+}
+.gnbtext{
+    margin: 10rem 0;
+    font-size: 3rem;
+}
+
+#profilePic > img {
+    display: flex;
+    width: 15rem;
+    height: 15rem;
+    margin-top: 5rem ;
+    background-color: wheat;
+    border-radius: 7.5rem;
+    
 }
 /* gnb end */
 
 /* container start */
 #container{
-    height: 90vh;
+    height: 85vh;
     background-color: rgb(38, 105, 105);
 }
 /* container end */
