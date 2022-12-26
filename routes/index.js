@@ -5,8 +5,9 @@ const user = require("./user.route")
 const profile = require("./profile.route")
 
 
-// router.use("/board", board)
+
 router.use("/user", user)
+
 router.use("/board", board)
 // router.use("/profile", profile)
 

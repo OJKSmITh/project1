@@ -12,7 +12,7 @@ nunjucks.configure("views", {
 app.use(express.static("public"))
 app.use(express.urlencoded({ extended: false }))
 
-app.use(userRouter)
+app.use(router)
 
 app.get('/', (req, res, next) => {
     res.render("main.html")
