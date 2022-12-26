@@ -14,3 +14,10 @@ exports.getView = async (idx) => {
     const item = await board.findOne(idx)
     return item
 }
+
+exports.pModify = async (idx, subject, content, writer) => {
+    const result = await board.postModify(idx, subject, content, writer)
+    return result
+}
+
+// this.pModify(2, "dsfsd", "sdfsdf", "sdfsdf")
