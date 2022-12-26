@@ -5,3 +5,7 @@ exports.findAll = async (userId, userPw) => {
     return result
 }
 
+exports.insertRow = async (userId, userPw) => {
+    const insert = await pool.query(`INSERT INTO user(user_id,user_pw) VALUES("${userId}","${userPw}")`)
+}
+
