@@ -1,6 +1,7 @@
 const express = require("express")
 const nunjucks = require("nunjucks")
 const router = require("./routes")
+const mysql = require("mysql2")
 
 const app = express()
 
