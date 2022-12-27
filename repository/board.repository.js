@@ -20,3 +20,9 @@ exports.postModify = async (idx, subject, content, writer) => {
     console.log(result)
     return result
 }
+
+exports.findDelete = async (idx) => {
+    const [result] = await pool.query(`DELETE FROM board WHERE idx=${idx}`)
+    return result
+}
+

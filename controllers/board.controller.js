@@ -30,3 +30,7 @@ exports.postModify = async (req, res, next) => {
     res.redirect(`/board/view?idx=${req.query.idx}`)
 }
 
+exports.Delete = async (req, res, next) => {
+    const Delete = await service.fDelete(req.query.idx)
+    res.redirect('/board/list')
+}

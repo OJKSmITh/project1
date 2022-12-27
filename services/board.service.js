@@ -20,4 +20,8 @@ exports.pModify = async (idx, subject, content, writer) => {
     return result
 }
 
-// this.pModify(2, "dsfsd", "sdfsdf", "sdfsdf")
+exports.fDelete = async (idx) => {
+    const result = await board.findDelete(idx)
+    return result
+}
+
