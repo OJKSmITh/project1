@@ -19,7 +19,7 @@
         </tr>
         {% for item in list%}
         <tr>
-            <td>{{item.idx}}</td>
+            <td>{{list.length-loop.index+1}}</td>
             <td><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></td>
             <td>{{item.writer}}</td>
             <td>{{item.registerDate}}</td>

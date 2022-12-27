@@ -25,3 +25,7 @@ exports.fDelete = async (idx) => {
     return result
 }
 
+exports.hPlus = async (idx) => {
+    const result = await board.hitPlus(idx)
+    return result
+}

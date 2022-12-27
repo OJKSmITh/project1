@@ -19,6 +19,7 @@ exports.postWrite = async (req, res, next) => {
 
 exports.view = async (req, res, next) => {
     const [view] = await service.getView(req.query.idx)
+    const plus = await service.hPlus(req.query.idx)
     res.render('board/view.html', { view })
 }
 
