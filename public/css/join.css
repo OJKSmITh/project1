@@ -9,8 +9,10 @@
     margin: 3rem 0 0 0;
 }
 #joinpage > h1 >img {
-    width: 6rem;
-    height: 6rem;
+    position: relative;
+    z-index: 8;
+    width: 16rem;
+    height: 16rem;
     
 }
 #joinpage > h2 {
