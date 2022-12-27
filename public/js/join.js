@@ -4,8 +4,10 @@ const userPwCheck = document.querySelectorAll("#userPwCheck")
 const pwTrue = document.querySelector("#pwTrue")
 const pwFalse = document.querySelector("#pwFalse")
 const items = document.querySelector("#items")
+const password = document.getElementById("userPw")
+const passwordCheck = document.getElementById("userPwCheck");
 
-for(let i = 0; i<9; i++){
+for(let i = 0; i<10; i++){
     formItem[0].classList ="itemAdd"
     formItem[i+1].classList ="itemNone"
 
@@ -13,20 +15,21 @@ for(let i = 0; i<9; i++){
         const target = e.target
         if(target.value !== "" || target.value !== undefined ){
             formItem[i+1].classList="itemAdd"
-            formItem[i-1].classList="itemAdd"
             formItem[i-1].classList="itemAdd2"
         }else{
             formItem[i+1].classList ="itemNone"
-
         }
-        items.scrollTop = items.scrollHeight
+    }
+    const clickHandler =(e) =>{
+        items.scrollTop = items.scrollHeight;
     }
     formItem[i].addEventListener("input", inputHandler)
+    formItem[i].addEventListener("click", clickHandler)
     
-    console.log(userPw.value)
 }
-// if(formItem[1].value !== formItem[2].value){
-//     pwFalse.style.display ="block"
-// } else {
-//     pwTrue.style.display ="block"
-// }
+
+function keyHandler(e){
+    console.log(e.keyCode)
+}
+
+password.addEventListener("keyup", keyHandler)

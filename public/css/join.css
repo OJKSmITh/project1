@@ -22,18 +22,21 @@
     justify-content: center;
     align-items: center;
     width: 50rem;
-    height: 75vh;
+    height: 65vh;
     border-radius: 1.5rem;
     background-color: antiquewhite;
+    scroll-behavior: smooth;
 
 }
 #items{
     display: flex;
-    height: 24rem;
-    width: 33rem;
-    padding: 4rem;
-    overflow: scroll;
+    height: 60rem;
+    width: 40rem;
+    padding: 1rem;
+    margin-top: 15vh;
+    overflow: hidden;
     justify-content: center;
+    align-items: flex-end;
     scroll-behavior: smooth;
 }
 #items::-webkit-scrollbar { 
@@ -42,17 +45,20 @@
 }
 
 form > div {
-    width: 27rem;
+    width: 35rem;
     height: 8rem;
     margin-bottom: 1.5rem; 
     padding: 0.3rem;
     border: 0.1rem solid #cccccc;
     border-radius: 1.5rem;
+    scroll-behavior: smooth !important;
+
+
 }
 form > div > div{
     display: flex;
     justify-content: space-between;
-    width: 21rem;
+    width: 30rem;
     margin: 1rem auto;
     border: 0.1rem solid #cccccc;
     border-radius: 0.7rem;
@@ -91,6 +97,7 @@ input{
     
 }
 #btn{
+    padding-top: 4rem;
     justify-content: center;
     border: none;
 }
@@ -110,5 +117,5 @@ button {
 }
 .itemAdd2{
     /* display: block; */
-    opacity: 0.3;
+    opacity: 0.4;
 }
