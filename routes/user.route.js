@@ -13,6 +13,9 @@ router.get('/main2', controller.getLogin2)
 // ======================================== join
 router.get('/join', controller.getInsert)
 
-router.post('/join', controller.postInsert)
+router.post('/welcome', controller.postInsert)
 
 module.exports = router
+
+//============================================
+router.get('/logout', controller.logout)

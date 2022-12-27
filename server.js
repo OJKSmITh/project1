@@ -2,6 +2,7 @@ const express = require("express")
 const nunjucks = require("nunjucks")
 const router = require("./routes")
 const mysql = require("mysql2")
+const cookieParser = require("cookie-parser")
 
 const app = express()
 
@@ -12,11 +13,21 @@ nunjucks.configure("views", {
 
 app.use(express.static("public"))
 app.use(express.urlencoded({ extended: false }))
+app.use(cookieParser())
 
 app.use(router)
 
 app.get('/', (req, res, next) => {
     res.render("main.html")
+})
+
+app.use((error, req, res, next) => {
+    res.send(`
+        <script type='text/javascript'>
+        alert("${error.message}");
+        history.back();
+        </script>
+    `)
 })
 
 

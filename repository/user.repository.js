@@ -8,6 +8,3 @@ exports.findAll = async (userId, userPw) => {
 exports.insertRow = async (userId, userPw, userName, nickName, birth, gender, phoneNum, telNum) => {
     const insert = await pool.query(`INSERT INTO user(userId,userPw,userName,nickName,birth,gender,phoneNum,telNum) VALUES("${userId}","${userPw}","${userName}","${nickName}","${birth}","${gender}","${phoneNum}","${telNum}")`)
 }
-
-
-
