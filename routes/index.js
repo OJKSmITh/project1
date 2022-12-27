@@ -9,7 +9,7 @@ const profile = require("./profile.route")
 router.use("/user", user)
 
 router.use("/board", board)
-router.use("/profile", profile)
+// router.use("/profile", profile)
 
 
 module.exports = router
