@@ -1,11 +1,13 @@
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 *{
     position: relative;
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    z-index: 500;
 }
 a{
     text-decoration: none;
@@ -13,21 +15,21 @@ a{
 #wrap{
     width: 100vw;
     height: 100vh;
-    /* overflow: hidden; */
 }
 /* header start */
-.header_wrap{
-    background-color: #939393;
-}
+
 .header{
     display: flex;
-    position: sticky;
+    /* position: absolute; */
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 3rem;
-    height: 15vh;
+    padding: 1rem 3rem 1rem 0;
+    height: 9vh;
 }
-
+.header > h1 {
+    margin: 0;
+    padding: 0;
+}
 .hamburger_btn {
     cursor: pointer;
     display: block;
@@ -64,10 +66,7 @@ a{
     border-radius: 0.125rem;
     background-color: #453a33;
 }
-h1 > img { 
-    height: 13vh;
-    width: 13vh;
-}
+
 
 /* header end */
 
@@ -78,13 +77,12 @@ h1 > img {
     display: flex;
     right: -30vw;
     width: 30vw;
-    height: 100vh;
+    height: 91vh;
     opacity: 0;
     transition: 1s;
 
 }
 .gnbon{
-    background-color: pink;
     position:absolute;
     z-index: 999;
     display: flex;
@@ -92,19 +90,28 @@ h1 > img {
     align-items: center;
     right: 0vw;
     width: 30vw;
-    height: 85vh;
+    height: 91vh;
     opacity: 1;
     transition: 1s;
 }
-#gnb > div > a {
+#gnb > div > a:nth-child(1), a:nth-child(2) {
     display: inline-block;
     margin: 1rem;
     font-size: 2rem;
     padding: 0.7rem 1.4rem;
+    text-align: center;
+    border: 00.15rem solid #939393
+}
+#gnb > div > a:nth-child(3){
+    display: block;
+    margin: 1rem;
+    font-size: 2rem;
+    padding: 0.7rem 1.4rem;
+    text-align: center;
     border: 00.15rem solid #939393
 }
 .gnbtext{
-    margin: 10rem 0;
+    margin: 3rem 0;
     font-size: 3rem;
 }
 
@@ -120,8 +127,9 @@ h1 > img {
 /* gnb end */
 
 /* container start */
-#container{
-    height: 85vh;
-    background-color: rgb(38, 105, 105);
+#container_wrap{
+    height: 91vh;
+    overflow: hidden;
 }
+
 /* container end */

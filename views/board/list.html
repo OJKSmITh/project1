@@ -6,29 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/public/css/root.css">
+    <link rel="stylesheet" href="/public/css/boardList.css">
 </head>
 
 <body>
-    <table>
-        <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>작성일</th>
-            <th>조회수</th>
-        </tr>
-        {% for item in list%}
-        <tr>
-            <td>{{list.length-loop.index+1}}</td>
-            <td><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></td>
-            <td>{{item.writer}}</td>
-            <td>{{item.registerDate}}</td>
-            <td>{{item.hit}}</td>
-        </tr>
-        {% endfor %}
+    <div id="boardList_wrap">
+        <div id="boardList">
+            <div id="title">
+                <span>환장의 나라 커뮤니티</span>
+            </div>
+            <div id="board">
+                <div id="table">
+                    <ul id="tableHeader">
+                        <span>번호</span>
+                        <span>제목</span>
+                        <span>작성자</span>
+                        <span>작성일</span>
+                        <span>조회수</span>
+                    </ul>
+                    {% for item in list%}
+                    <ul>
+                        <li>{{item.idx}}</li>
+                        <li><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></li>
+                        <li>{{item.writer}}</li>
+                        <li>{{item.registerDate}}</li>
+                        <li>{{item.hit}}</li>
+                    </ul>
+                    {% endfor %}
+                </div>
+                <div id="page">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>3</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                </div>
+                <a href="/board/write">글쓰기</a>
+            </div>
+        </div>
+    </div>
+    <script src="/public/js/board.list.js"></script>
 
-    </table>
-    <a href="/board/write">글쓰기</a>
 </body>
 
 </html>
