@@ -5,10 +5,10 @@ exports.getLogin = (req, res, next) => {
 }
 
 exports.postLogin = async (req, res, next) => {
-    const { userId, userPw, nickName } = req.body
-    const create = await service.findLogin(userId, userPw, nickName)
+    const { userId, userPw } = req.body
+    const create = await service.findLogin(userId, userPw)
     if (create !== undefined) {
-        res.setHeader("Set-Cookie", `token=${create.nickName};path=/`)
+        res.setHeader("Set-Cookie", `token=${create.userId};path=/`)
         res.redirect('/user/main2')
     } else {
         res.redirect('/user/login')

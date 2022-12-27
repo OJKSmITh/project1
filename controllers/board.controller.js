@@ -2,7 +2,6 @@ const service = require("../services/board.service")
 
 exports.list = async (req, res, next) => {
     const acc = req.cookies
-    console.log(acc)
     if (Object.keys(acc).length === 0) return next(new Error("로그인을 해주세요!"))
     const list = await service.getList()
     res.render('board/list.html', { list })
@@ -13,7 +12,8 @@ exports.getWrite = async (req, res, next) => {
 }
 
 exports.postWrite = async (req, res, next) => {
-    const create = await service.postBoard(req.body.subject, req.body.content, req.body.writer)
+    const { token } = req.cookies
+    const create = await service.postBoard(req.body.subject, req.body.content, token)
     res.redirect('/board/list')
 }
 
