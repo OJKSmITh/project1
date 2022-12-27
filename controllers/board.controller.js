@@ -1,6 +1,9 @@
 const service = require("../services/board.service")
 
 exports.list = async (req, res, next) => {
+    const acc = req.cookies
+    console.log(acc)
+    if (Object.keys(acc).length === 0) return next(new Error("로그인을 해주세요!"))
     const list = await service.getList()
     res.render('board/list.html', { list })
 }
