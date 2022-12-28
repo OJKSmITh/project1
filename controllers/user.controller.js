@@ -30,10 +30,16 @@ exports.postInsert = async (req, res, next) => {
     const { userId, userPw, userName, nickName, birth, gender, phoneNum, telNum } = req.body
     const insert = await service.insert(userId, userPw, userName, nickName, birth, gender, phoneNum, telNum)
     res.render("user/welcome.html", { userId, userName, gender, phoneNum, telNum })
-    // res.redirect('/user/login')
+
 }
 
 exports.logout = (req, res, next) => {
     res.setHeader("Set-Cookie", `token=;path=/;max-Age=0;`)
     res.redirect('/')
+}
+
+exports.getProfile = async (req, res, next) => {
+    const { token } = req.cookies
+    const { userId, userName, gender, phoneNum, telNum } = await service.tokenInsert(token)
+    res.render("user/profile.html", { userId, userName, gender, phoneNum, telNum })
 }

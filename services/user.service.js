@@ -11,3 +11,8 @@ exports.insert = async (userId, userPw, userName, nickName, birth, gender, phone
     const insert = await user.insertRow(userId, userPw, userName, nickName, birth, gender, phoneNum, telNum)
     return insert
 }
+
+exports.tokenInsert = async (token) => {
+    const result = await user.findToken(token)
+    return result
+}
