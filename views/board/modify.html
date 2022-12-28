@@ -10,20 +10,20 @@
 
 <body>
     <h2>Modify page</h2>
-    <form method="post" action="/board/view?idx={{modify.idx}}">
+    <form method="post" action="/board/view?idx={{idx}}">
         <ul>
             <li>
                 제목 : <br>
-                <input type="text" name="subject" value="{{modify.subject}}">
+                <input type="text" name="subject" value="{{subject}}">
             </li>
             <li>
                 작성자 : <br>
-                <input type="text" name="writer" value="{{modify.writer}}">
+                <input type="text" name="writer" value="{{writer}}">
             </li>
             <li>
                 내용: <br>
                 <textarea name="content">
-                    {{modify.content}}
+                    {{content}}
                 </textarea>
             </li>
         </ul>

@@ -16,17 +16,18 @@
             <a href="/"><img src="/img/logo.png" alt=""></a>
         </div>
         <div id="write_content">
-            <form class="write">
+            <form method="post" action="/board/write?idx={{idx}}" class="write">
                 <ul class="subject">
                     <li>
+                        제목 :
                         <input type="text" name="subject">
                     </li>
                 </ul>
                 <ul class="name">
-                    <li>작성자 : {{}}
+                    <li>작성자 : {{token}}
                         <input type="hidden" name="writer">
                     </li>
-                    <li>22.12.18 {{view.registerDate}}</li>
+                    <li>22.12.18 </li>
                 </ul>
                 <ul class="content">
                     <li>내용</li>
@@ -34,14 +35,12 @@
                         <textarea name="content"></textarea>
                     </li>
                 </ul>
-            </form>
-            <div id="btns">
-                <button type="submit">
-                    <a href="/board/view.html">
+                <div id="btns">
+                    <button type="submit">
                         완료!
-                    </a>
-                </button>
-            </div>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 

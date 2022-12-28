@@ -1,7 +1,7 @@
 const pool = require("./db")
 
 exports.findEvery = async () => {
-    const [result] = await pool.query(`SELECT * FROM board`)
+    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board`)
     return result
 }
 
@@ -11,7 +11,7 @@ exports.postOne = async (subject, content, writer) => {
 }
 
 exports.findOne = async (idx) => {
-    const [result] = await pool.query(`SELECT * FROM board where idx=${idx}`)
+    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate, '%Y-%m-%d') as registerDate, hit FROM board where idx=${idx}`)
     return result
 }
 
@@ -28,6 +28,16 @@ exports.findDelete = async (idx) => {
 
 exports.hitPlus = async (idx) => {
     const result = await pool.query(`update board set hit = hit+1 where idx=${idx}`)
+    return result
+}
+
+exports.findSubject = async (subject) => {
+    const [[result]] = await pool.query(`SELECT * FROM board WHERE subject="${subject}"`)
+    return result
+}
+
+exports.findLast = async () => {
+    const [[result]] = await pool.query(`SELECT * FROM board WHERE idx = (SELECT MAX(idx) FROM board)`)
     return result
 }
 
