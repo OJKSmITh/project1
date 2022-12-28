@@ -50,7 +50,7 @@ form {
     flex-direction: column;
     justify-content: center;
     width: 30rem;
-    height: 35rem;
+    height: 70%;
 }
 form > div {
     display: flex;
@@ -70,6 +70,7 @@ h1{
     flex-direction: column;
     justify-content: space-around;
     width: 30rem;
+    height: 80%;
     font-size: 1.6rem;
 }
 #info > ul {
@@ -81,21 +82,27 @@ h1{
     width: 18rem;
     height: 2.6rem;
     margin-top: 0.7rem;
-    font-size: 2rem;
+    font-size: 2.3rem;
+    color: #999;
     text-align: right;
+    background-color: initial;
+    border :none
+}
+#btns {
+margin-top: 2rem;
 }
 
-#button {
-    display: block;
-    margin: 3rem auto;
-    width: 30%;
+#btns > #button {
+    /* display: inline-block; */
+    margin: 2rem auto;
+    width: 50%;
     background-color: rgb(241, 198, 176);
     text-align: center;
-    line-height: 3rem;
+    line-height: 1.5rem;
     font-size: 1.5rem;
     border-radius: 0.7rem;
     padding: var(--input-padding);
     color: var(--font-color) ;
     border: 0.1rem solid var(--border-color);
-    height: 3rem;
+    height: 4.6rem;
 }

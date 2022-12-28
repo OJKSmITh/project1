@@ -18,6 +18,7 @@ a {
 #wrap {
     width: 100vw;
     height: 100vh;
+    overflow-x:hidden ;
 }
 
 /* header start */
@@ -163,38 +164,21 @@ a:nth-child(2) {
     align-items: center;
 
 }
-
-#container>h1 {
-    /* position: absolute; */
+#container > h1 {
     left: 5rem;
     height: 91vh;
-    margin-top: 90vh;
-    /* margin-bottom: 100vh; */
+    margin-top: 100vh;
+    transform: translateZ(1rem)scale(1.2);
+    z-index: -1;
     background-repeat: no-repeat;
     background-position: 50% 25%;
     background-size: cover;
-    background-attachment: fixed;
-}
 
-.bg2 {
-    height: 100%;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    background-image: url(/img/blockchain2.jpg);
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: cover;
-    background-attachment: fixed;
+    background-attachment: scroll fixed;
 }
-
-.bg3 {
-    height: 100%;
-    background-image: url(/img/blockchain3.jpg);
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    background-size: cover;
-    /*이 속성을 써 줘야지만 저런 결과물을 낼수가 있습니다.*/
-    background-attachment: fixed;
+.scrollForm{
+    width: 100vw;
+    height: 100vh;
+    background-color: #453a33;
+    margin-bottom: 50rem;
 }
-
-/* container end */
