@@ -9,8 +9,7 @@ exports.insertRow = async (userId, userPw, userName, nickName, birth, gender, ph
     const insert = await pool.query(`INSERT INTO user(userId,userPw,userName,nickName,birth,gender,phoneNum,telNum) VALUES("${userId}","${userPw}","${userName}","${nickName}","${birth}","${gender}","${phoneNum}","${telNum}")`)
 }
 
-
-exports.findToken = async (token) => {
+exports.findtoken = async (token) => {
     const [[result]] = await pool.query(`select * from user where userId="${token}";`)
     return result
 }

@@ -8,7 +8,7 @@ exports.list = async (req, res, next) => {
 }
 
 exports.getWrite = async (req, res, next) => {
-    res.render('board/write.html')
+    res.render("board/write.html")
 }
 
 exports.postWrite = async (req, res, next) => {

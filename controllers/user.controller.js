@@ -9,7 +9,7 @@ exports.postLogin = async (req, res, next) => {
     const create = await service.findLogin(userId, userPw)
     if (create !== undefined) {
         res.setHeader("Set-Cookie", `token=${create.userId};path=/`)
-        res.redirect('/user/main2')
+        res.redirect(`/user/main2`)
     } else {
         res.redirect('/user/login')
     }
@@ -17,9 +17,10 @@ exports.postLogin = async (req, res, next) => {
 // 3항
 // 특정변수 담은 값이 옳을떄 실행하는것 
 
-exports.getLogin2 = (req, res, next) => {
+exports.getLogin2 = async (req, res, next) => {
     const { token } = req.cookies
-    res.render('user/main2.html', { token })
+    const { idx } = await service.fToken(token)
+    res.render('user/main2.html', { token, idx })
 }
 
 exports.getInsert = (req, res, next) => {
@@ -38,8 +39,4 @@ exports.logout = (req, res, next) => {
     res.redirect('/')
 }
 
-exports.getProfile = async (req, res, next) => {
-    const { token } = req.cookies
-    const { userId, userName, gender, phoneNum, telNum } = await service.tokenInsert(token)
-    res.render("user/profile.html", { userId, userName, gender, phoneNum, telNum })
-}
+

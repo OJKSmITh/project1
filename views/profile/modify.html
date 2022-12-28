@@ -9,7 +9,31 @@
 </head>
 
 <body>
-
+    <form method="post" action="/profile/modify?idx={{idx}}">
+        <ul>
+            <li>
+                닉네임 : <br>
+                <input type="text" name="nickName" value="{{nickName}}">
+            </li>
+            <li>
+                이름 : <br>
+                <input type="text" name="userName" value="{{userName}}">
+            </li>
+            <li>
+                성별: <br>
+                <input type="text" name="gender" value="{{gender}}">
+            </li>
+            <li>
+                전화번호: <br>
+                <input type="text" name="telNum" value="{{telNum}}">
+            </li>
+            <li>
+                핸드폰 번호: <br>
+                <input type="text" name="phoneNum" value="{{phoneNum}}">
+            </li>
+        </ul>
+        <button type="submit">완료!</button>
+    </form>
 </body>
 
 </html>

@@ -20,6 +20,5 @@ router.post('/welcome', controller.postInsert)
 router.get('/logout', controller.logout)
 
 //========================================== profile
-router.get('/profile', controller.getProfile)
 
 module.exports = router
