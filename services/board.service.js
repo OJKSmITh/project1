@@ -40,4 +40,3 @@ exports.lastValue = async () => {
     return result
 }
 
-this.pModify(13, "SDfsdf", "sdfsdfsd", "SDfsdfsdf")
