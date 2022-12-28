@@ -6,29 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/boardWrite.css">
 </head>
 
 <body>
-    <h2>Modify page</h2>
-    <form method="post" action="/board/view?idx={{modify.idx}}">
-        <ul>
-            <li>
-                제목 : <br>
-                <input type="text" name="subject" value="{{modify.subject}}">
-            </li>
-            <li>
-                작성자 : <br>
-                <input type="text" name="writer" value="{{modify.writer}}">
-            </li>
-            <li>
-                내용: <br>
-                <textarea name="content">
-                    {{modify.content}}
-                </textarea>
-            </li>
-        </ul>
-        <button type="submit">완료!</button>
-    </form>
+    <div id="content_wrap">
+        <div id="logo">
+            <a href="/"><img src="/img/logo.png" alt=""></a>
+        </div>
+        <div id="write_content">
+            <form class="write">
+                <ul class="subject">
+                    <li>
+                        <input type="text" name="subject" value="{{modify.subject}}">
+                    </li>
+                </ul>
+                <ul class="name">
+                    <li>작성자 : {{userId}}
+                        <input type="hidden" name="writer">
+                    </li>
+                    <li>22.12.18 {{registerDate}}</li>
+                </ul>
+                <ul class="content"> 
+                    <li>내용</li>
+                    <li>
+                        <textarea name="content">{{modify.content}}</textarea>
+                    </li>
+                </ul>
+                <div id="btns">
+                    <button type="submit">
+                        수정완료    
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
+
+
+
+

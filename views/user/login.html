@@ -6,21 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 
 <body>
-    <h2>로그인 페이지</h2>
-    <form method="post" action="/user/login">
-        <div>
-            아이디를 입력해주세요 <br>
-            <input type="text" name="userId">
+    <div id="login_wrap">
+        <div id="logo">
+            <a href="/"><img src="/img/logo.png" alt=""></a>
         </div>
-        <div>
-            비밀번호를 입력해주세요 <br>
-            <input type="password" name="userPw">
+        <div id="login">
+            <form method="post" action="/user/login">
+                <div id="userId">
+                    <span>아이디</span>
+                    <input type="text" name="userId">
+                </div>
+                <div id="userPw">
+                    <span>비밀번호</span>
+                    <input type="password" name="userPw">
+                </div>
+                <button type="submit" id="userLogin">로그인</button>
+            </form>
         </div>
-        <button type="submit">로그인</button>
-    </form>
+    </div>
 </body>
 
 </html>
