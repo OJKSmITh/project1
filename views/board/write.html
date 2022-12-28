@@ -6,23 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/public/css/root.css">
+    <link rel="stylesheet" href="/public/css/boardWrite.css">
 </head>
 
 <body>
+    <div id="content_wrap">
+        <div id="logo">
+            <a href="/"><img src="/public/img/logo.png" alt=""></a>
+        </div>
+        <div id="write_content">
+            <form class="write">
+                <ul class="subject">
+                    <li>
+                        <input type="text" name="subject">
+                    </li>
+                </ul>
+                <ul class="name">
+                    <li>작성자 : {{}}
+                        <input type="hidden" name="writer">
+                    </li>
+                    <li>22.12.18 {{view.registerDate}}</li>
+                </ul>
+                <ul class="content"> 
+                    <li>내용</li>
+                    <li>
+                        <textarea name="content"></textarea>
+                    </li>
+                </ul>
+            </form>
+            <div id="btns">
+                <button type="submit">
+                    <a href="/board/view.html">
+                        완료!    
+                    </a>    
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
     <h2>write페이지입니다!</h2>
     <form method="post" action="/board/write">
-        <div>
-            제목: <br>
-            <input type="text" name="subject">
-        </div>
-        <div>
-            <input type="hidden" name="writer">
-        </div>
-        <div>
-            내용: <br>
-            <textarea name="content"></textarea>
-        </div>
-        <button type="submit">완료!</button>
+       
     </form>
 </body>
 

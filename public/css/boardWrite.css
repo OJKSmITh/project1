@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+ul, li{
+    list-style: none;
+}
+input, textarea{
+    background-color: initial;
+}
+
+#content_wrap{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+}
+#logo > a > img{
+    width: 20vw;
+}
+#write_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--content-box);
+    padding :3rem;
+    width:65vw;
+    height: 80vh;
+}
+.write {
+    width: 100%;
+    height: 100%;
+    background-color: #2435;
+    margin: 3rem 0;
+}
+.write > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 0.1rem solid #ddd;
+    font-size: 1.5rem;
+}
+.subject {
+    font-weight: bold;
+    height: 10%;
+    padding: 0.7rem 1.4rem 0.7rem 2.8rem ;
+}
+.subject > li {
+    font-size: 2.5rem;
+    margin: 0.7rem ;
+}
+.subject > li > input {
+
+}
+.write > .name {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 5%;
+    padding: 0.7rem 1.4rem 0.7rem 2.8rem ;
+
+}
+.write > .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 77%;
+}
+.write > .content > li:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 13%;
+}
+.write > .content > li:nth-child(2){
+    padding: 4rem;
+    width: 100%;
+    height:36rem;
+    border-left: solid 0.1rem var(--border-color);
+}
+#btns {
+    position: relative;
+    right: 0;
+    margin-bottom: 3rem;
+    margin-left: 55rem;
+}
+button {
+    border: none;
+    background-color: var(--content-box);
+}
+button > a {
+    right: 8rem; bottom: 4rem;
+    background-color: rgb(241, 198, 176);
+    width: 7rem;
+    height: 3.5rem;
+    margin: 0 1.5rem;
+    text-align: center;
+    line-height: 4rem;
+    font-size: 1.5rem;
+    border-radius: 1.3rem;
+    padding: var(--input-padding);
+    color: var(--font-color) ;
+}

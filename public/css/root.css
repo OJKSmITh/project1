@@ -3,4 +3,10 @@
     --content-box:antiquewhite;
     --main_fontcolor:rgb(241,198,176);
     --input-padding:0.7rem 1.4rem;
+    --font-color : #70645d;
+    --border-color : #ddd;
+
+}
+html {
+    font-size: 62.5%;
 }

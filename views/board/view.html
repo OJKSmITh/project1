@@ -6,21 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/public/css/root.css">
+    <link rel="stylesheet" href="/public/css/boardView.css">
 </head>
-
 <body>
-    <div id="list-content">
-        <h2><a href="/board/list">게시판</a></h2>
-        <table>
-            <tr class="title">
-                <td class="idx">글번호 : {{view.idx}}</td>
-                <td class="subject">제목 : {{view.subject}}</td>
-                <td class="name">글쓴이 : {{view.writer}}</td>
-            </tr>
-        </table>
-        <button><a href="/board/modify?idx={{view.idx}}">수정하기</a></button>
-        <button><a href="/board/list">완료</a></button>
-        <button><a href="/board/delete?idx={{view.idx}}">삭제하기</a></button>
+    <div id="content_wrap">
+        <div id="logo">
+            <a href="/"><img src="/public/img/logo.png" alt=""></a>
+        </div>
+        <div id="view_content">
+            <div class="view">
+                <!-- <ul class="idx">글번호 : {{view.idx}}</ul> -->
+                <ul class="subject">
+                    <li>안녕하세요. 여기는 제목이 들어갑니다. {{view.subject}}</li>
+                </ul>
+                <ul class="name">
+                    <li>백종환입니다아아아앙 : {{view.writer}}</li>
+                    <li>22.12.18 {{view.registerDate}}</li>
+                </ul>
+                <ul class="content"> 
+                    <li>내용</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Vivamus aliquet pellentesque turpis, consequat convallis nulla sceler
+                        isqueMaecenas lacus lacus, ornare at est condimentum, elementum
+                        rhoncus tellus.Maecenas ac augue adipiscing, rutrum nunc non, commodo
+                        leo.Sed tempor ultrices magna sed convallis. Phasellus iaculis, arcu id 
+                        bibendum mollis, neque tellus pellentesque nisl, 
+                        a facilisis tortor purus sed urna.{{view.content}}</li>
+                </ul>
+            </div>
+            <div id="btns">
+                <button><a href="/board/list">돌아가기</a></button>
+                <button><a href="/board/modify?idx={{view.idx}}">수정하기</a></button>
+                <button><a href="/board/delete?idx={{view.idx}}">삭제하기</a></button>
+            </div>
+        </div>
     </div>
 </body>
 
