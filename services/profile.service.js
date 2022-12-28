@@ -16,4 +16,7 @@ exports.fValue = async (idx) => {
     return result
 }
 
-
+exports.fImage = async (token) => {
+    const result = await profile.findImage(token)
+    return result
+}
