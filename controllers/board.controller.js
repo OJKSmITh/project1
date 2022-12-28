@@ -21,19 +21,20 @@ exports.postWrite = async (req, res, next) => {
 }
 
 exports.view = async (req, res, next) => {
-    const [{ subject, content, writer, registerDate, idx }] = await service.getView(req.query.idx)
+    const { subject, content, writer, registerDate, idx } = await service.getView(req.query.idx)
     const { token } = req.cookies
     const plus = await service.hPlus(req.query.idx)
     res.render('board/view.html', { subject, content, writer, registerDate, idx, token })
 }
 
 exports.getModify = async (req, res, next) => {
-    const [{ idx, subject, writer, content }] = await service.getView(req.query.idx)
-    res.render('board/modify.html', { idx, subject, writer, content })
+    const { idx, subject, writer, content, registerDate } = await service.getView(req.query.idx)
+    res.render('board/modify.html', { idx, subject, writer, content, registerDate })
 }
 
 exports.postModify = async (req, res, next) => {
-    const modify = await service.pModify(req.query.idx, req.body.subject, req.body.content, req.body.writer)
+    const { idx, subject, content, writer } = req.body
+    const modify = await service.pModify(idx, subject, content, writer)
     res.redirect(`/board/view?idx=${req.query.idx}`)
 }
 

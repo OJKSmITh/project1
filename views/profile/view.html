@@ -14,7 +14,7 @@
     <div id="profile_wrap">
         <div id="profile_con">
             <div id="logo">
-                <a href="/"><img src="/img/logo.png" alt=""></a>
+                <a href="/"><img src="/img/logo.png"></a>
             </div>
             <div id="profile_view">
                 <div id="icon">
@@ -25,7 +25,7 @@
                     <div id="info">
                         <ul>
                             <li>닉네임</li>
-                            <span>{{nickname}}</span>
+                            <span>{{nickName}}</span>
                         </ul>
                         <ul>
                             <li>이름</li>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div id="btns">
-                    <a href="/user/main2" id="button">
+                    <a href="/profile/modify?idx={{idx}}" id="button">
                         수정하기
                     </a>
                     <a href="/user/main2" id="button">
@@ -56,10 +56,10 @@
             </div>
         </div>
     </div>
-            <button><a href="/profile/modify?idx={{idx}}">
-                    수정하기
-                </a></button>
-        </div>
+    <button><a href="/profile/modify?idx={{idx}}">
+            수정하기
+        </a></button>
+    </div>
     </div>
 </body>
 

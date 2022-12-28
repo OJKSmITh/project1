@@ -15,4 +15,3 @@ exports.fValue = async (idx) => {
     const result = await profile.findValue(idx)
     return result
 }
-

@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const controller = require("../controllers/user.controller")
 
+
 // ======================================== login
 router.get('/login', controller.getLogin)
 
@@ -22,3 +23,4 @@ router.get('/logout', controller.logout)
 //========================================== profile
 
 module.exports = router
+

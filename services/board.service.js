@@ -39,3 +39,4 @@ exports.lastValue = async () => {
     const result = await board.findLast()
     return result
 }
+
