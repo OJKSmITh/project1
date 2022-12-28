@@ -16,8 +16,9 @@ router.get('/join', controller.getInsert)
 router.post('/welcome', controller.postInsert)
 
 
-//============================================
+//============================================ logout
 router.get('/logout', controller.logout)
 
+//========================================== profile
 
 module.exports = router

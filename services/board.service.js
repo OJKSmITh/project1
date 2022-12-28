@@ -29,3 +29,13 @@ exports.hPlus = async (idx) => {
     const result = await board.hitPlus(idx)
     return result
 }
+
+exports.fSubject = async (subject) => {
+    const result = await board.findSubject(subject)
+    return result
+}
+
+exports.lastValue = async () => {
+    const result = await board.findLast()
+    return result
+}
