@@ -28,9 +28,8 @@ exports.view = async (req, res, next) => {
 }
 
 exports.getModify = async (req, res, next) => {
-    const { idx, subject, writer, content } = await service.getView(req.query.idx)
-    console.log(writer)
-    res.render('board/modify.html', { idx, subject, writer, content })
+    const { idx, subject, writer, content, registerDate } = await service.getView(req.query.idx)
+    res.render('board/modify.html', { idx, subject, writer, content, registerDate })
 }
 
 exports.postModify = async (req, res, next) => {

@@ -39,3 +39,5 @@ exports.lastValue = async () => {
     const result = await board.findLast()
     return result
 }
+
+this.pModify(13, "SDfsdf", "sdfsdfsd", "SDfsdfsdf")

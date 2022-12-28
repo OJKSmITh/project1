@@ -26,7 +26,7 @@ exports.findDelete = async (idx) => {
 }
 
 exports.hitPlus = async (idx) => {
-    const result = await pool.query(`update board set hit = hit+1 where idx=${idx}`)
+    const result = await pool.query(`UPDATE board set hit = hit+1 where idx=${idx}`)
     return result
 }
 
