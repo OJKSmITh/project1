@@ -6,34 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/profileModify.css">
 </head>
 
 <body>
-    <form method="post" action="/profile/modify?idx={{idx}}">
-        <ul>
-            <li>
-                닉네임 : <br>
-                <input type="text" name="nickName" value="{{nickName}}">
-            </li>
-            <li>
-                이름 : <br>
-                <input type="text" name="userName" value="{{userName}}">
-            </li>
-            <li>
-                성별: <br>
-                <input type="text" name="gender" value="{{gender}}">
-            </li>
-            <li>
-                전화번호: <br>
-                <input type="text" name="telNum" value="{{telNum}}">
-            </li>
-            <li>
-                핸드폰 번호: <br>
-                <input type="text" name="phoneNum" value="{{phoneNum}}">
-            </li>
-        </ul>
-        <button type="submit">완료!</button>
-    </form>
+    <div id="profile_wrap">
+        <div id="profile_con">
+            <div id="logo">
+                <a href="/"><img src="/img/logo.png" alt=""></a>
+            </div>
+            <div id="profile_view">
+                <div id="icon">
+                    원123123
+                </div>
+                <h1>{{userId}}님의 정보 수정</h1>
+                 <form method="post" action="/profile/modify?idx={{idx}}">
+                    <div id="info">
+                        <ul>
+                            <li>닉네임</li>
+                            <input type="text" name="nickName" value="{{nickName}}">                        </ul>
+                        <ul>
+                            <li>이름</li>
+                            <input type="text" name="userName" value="{{userName}}">                       </ul>
+                        <ul>
+                            <li>성별</li>
+                            <select name="gender" id="gender" value="{{gender}}">
+                                <option value="남자">남자</option>
+                                <option value="여자">여자</option>
+                            </select>
+                        </ul>
+                        <ul>
+                            <li>전화번호</li>
+                            <input type="text" value="{{telNum}}">
+                        </ul>
+                        <ul>
+                            <li>핸드폰번호</li>
+                            <input type="text" value="{{phoneNum}}">
+                        </ul>
+                    </div>
+                    <button type="submit" id="button">
+                    수정 완료
+                    </button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

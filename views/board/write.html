@@ -20,36 +20,30 @@
                 <ul class="subject">
                     <li>
                         제목 :
-                        <input type="text" name="subject">
+                        <input type="text" name="subject" placeholder="   제목을 입력해 주세요.">
                     </li>
                 </ul>
                 <ul class="name">
                     <li>작성자 : {{token}}
                         <input type="hidden" name="writer">
                     </li>
-                    <li>22.12.18 </li>
+                    <li>{{registerDate}}</li>
+
                 </ul>
                 <ul class="content">
                     <li>내용</li>
                     <li>
-                        <textarea name="content"></textarea>
+                        <textarea name="content" placeholder="내용을 입력해 주세요."></textarea>
                     </li>
                 </ul>
                 <div id="btns">
                     <button type="submit">
-                        완료!
+                        글 작성하기    
                     </button>
                 </div>
             </form>
         </div>
     </div>
-
-
-
-    <h2>write페이지입니다!</h2>
-    <form method="post" action="/board/write">
-
-    </form>
 </body>
 
 </html>
