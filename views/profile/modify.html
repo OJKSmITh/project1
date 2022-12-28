@@ -6,9 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/profileModify.css">
 </head>
 
 <body>
+    <div id="profile_wrap">
+        <div id="profile_con">
+            <div id="logo">
+                <a href="/"><img src="/img/logo.png" alt=""></a>
+            </div>
+            <div id="profile_view">
+                <div id="icon">
+                    원123123
+                </div>
+                <h1>{{userId}}님의 정보 수정</h1>
+                <form action="/profile/view" method="post" >
+                    <div id="info">
+                        <ul>
+                            <li>닉네임</li>
+                            <input type="text" value="{{nickname}}">                        </ul>
+                        <ul>
+                            <li>이름</li>
+                            <input type="text" value="{{name}}">                        </ul>
+                        <ul>
+                            <li>성별</li>
+                            <select name="gender" id="gender" value="{{gender}}">
+                                <option value="남자">남자</option>
+                                <option value="여자">여자</option>
+                            </select>
+                        </ul>
+                        <ul>
+                            <li>전화번호</li>
+                            <input type="text" value="{{telNum}}">
+                        </ul>
+                        <ul>
+                            <li>핸드폰번호</li>
+                            <input type="text" value="{{phoneNum}}">
+                        </ul>
+                    </div>
+                </form>
+                <button type="submit" id="button">
+                    수정 완료
+                </button>
+            </div>
+        </div>
+    </div>
 
 </body>
 

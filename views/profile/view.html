@@ -6,9 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/profileView.css">
 </head>
 
 <body>
+    <div id="profile_wrap">
+        <div id="profile_con">
+            <div id="logo">
+                <a href="/"><img src="/img/logo.png" alt=""></a>
+            </div>
+            <div id="profile_view">
+                <div id="icon">
+                    원123123
+                </div>
+                <h1>{{userId}}님의 정보</h1>
+                <div>
+                    <div id="info">
+                        <ul>
+                            <li>닉네임</li>
+                            <span>{{nickname}}</span>
+                        </ul>
+                        <ul>
+                            <li>이름</li>
+                            <span>{{userName}}</span>
+                        </ul>
+                        <ul>
+                            <li>성별</li>
+                            <span>{{gender}}</span>
+                        </ul>
+                        <ul>
+                            <li>전화번호</li>
+                            <span>{{telNum}}</span>
+                        </ul>
+                        <ul>
+                            <li>핸드폰번호</li>
+                            <span>{{phoneNum}}</span>
+                        </ul>
+                    </div>
+                </div>
+                <div id="btns">
+                    <a href="/user/main2" id="button">
+                        수정하기
+                    </a>
+                    <a href="/user/main2" id="button">
+                        돌아가기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
