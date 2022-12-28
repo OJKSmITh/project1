@@ -17,14 +17,17 @@
         </div>
         <div id="write_content">
             <form class="write" method="post" action="/board/view?idx={{idx}}">
+                <li>
+                    <input type="hidden" value="{{idx}}">
+                </li>
                 <ul class="subject">
                     <li>
                         <input type="text" name="subject" value="{{subject}}">
                     </li>
                 </ul>
                 <ul class="name">
-                    <li>작성자 : {{userId}}
-                        <input type="hidden" name="writer">
+                    <li>작성자 : {{writer}}
+                        <input type="hidden" name="writer" value="{{writer}}">
                     </li>
                     <li>{{registerDate}}</li>
                 </ul>
