@@ -6,29 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/public/css/header.css">
-    <link rel="stylesheet" href="/public/css/join.css">
-    <link rel="stylesheet" href="/public/css/root.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/join.css">
+    <link rel="stylesheet" href="/css/root.css">
 </head>
 
 <body>
     <div id="wrap">
         <div id="joinpage">
-            <h1><img src="/public/img/logo.png" alt=""></h1>
+            <h1><img src="/img/logo.png"></h1>
             <h2>환장의 나라 합류하기</h2>
             <div id="items_wrap">
                 <div id="items">
-                    <form method="post" action="/user/join">
+                    <form method="post" action="/user/welcome">
                         <div>
                             <span>아이디</span>
                             <div>
                                 <input type="text" name="userId">
                             </div>
-                        </div> 
+                        </div>
                         <div>
                             <span>패스워드</span>
                             <div>
-                                <input type="password" name="userPw" id="userPw" >
+                                <input type="password" name="userPw" id="userPw">
                             </div>
                         </div>
                         <div>
@@ -58,8 +58,7 @@
                         <div>
                             <span>생년월일</span>
                             <div>
-                                <input type="date" id="birth" name="birth"
-                                min="1900-01-01" max="2025-12-31">    
+                                <input type="date" id="birth" name="birth" min="1900-01-01" max="2025-12-31">
                             </div>
                         </div>
                         <div>
@@ -76,7 +75,7 @@
                             <span>핸드폰번호</span>
                             <div>
                                 <input type="text" name="phoneNum" placeholder="하이픈을 포함하여 적어주세요"
-                                pattern="[0-9]{3}-[0-9]{3}{4}-[0-9]{4}">
+                                    pattern="[0-9]{3}-[0-9]{3}{4}-[0-9]{4}">
                             </div>
                         </div>
                         <div>
@@ -114,7 +113,7 @@
             </div>
         </div>
     </div>
-    <script src="/public/js/join.js"></script>
+    <script src="/js/join.js"></script>
 </body>
 
 </html>
