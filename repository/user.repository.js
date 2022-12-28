@@ -14,5 +14,8 @@ exports.findtoken = async (token) => {
     return result
 }
 
-
+exports.findImage = async (token) => {
+    const [[result]] = await pool.query(`SELECT * FROM user where userId="${token}"`)
+    return result
+}
 

@@ -20,7 +20,8 @@ exports.postLogin = async (req, res, next) => {
 exports.getLogin2 = async (req, res, next) => {
     const { token } = req.cookies
     const { idx } = await service.fToken(token)
-    res.render('user/main2.html', { token, idx })
+    const { image } = await service.fImage(token)
+    res.render('user/main2.html', { token, idx, image })
 }
 
 exports.getInsert = (req, res, next) => {

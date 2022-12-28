@@ -14,3 +14,5 @@ exports.findValue = async (idx) => {
     const [[result]] = await pool.query(`SELECT * FROM user where idx=${idx}`)
     return result
 }
+
+
