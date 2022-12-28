@@ -15,7 +15,9 @@ router.get('/join', controller.getInsert)
 
 router.post('/welcome', controller.postInsert)
 
-module.exports = router
 
 //============================================
 router.get('/logout', controller.logout)
+
+
+module.exports = router

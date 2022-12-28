@@ -29,7 +29,7 @@ exports.getInsert = (req, res, next) => {
 exports.postInsert = async (req, res, next) => {
     const { userId, userPw, userName, nickName, birth, gender, phoneNum, telNum } = req.body
     const insert = await service.insert(userId, userPw, userName, nickName, birth, gender, phoneNum, telNum)
-    res.render("user/welcome.html", { userId })
+    res.render("user/welcome.html", { userId, userName, gender, phoneNum, telNum })
     // res.redirect('/user/login')
 }
 
