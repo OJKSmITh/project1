@@ -3,6 +3,8 @@ const nunjucks = require("nunjucks")
 const router = require("./routes")
 const mysql = require("mysql2")
 const cookieParser = require("cookie-parser")
+const multer = require("multer")
+const upload = multer({ dest: './upload' })
 
 const app = express()
 
