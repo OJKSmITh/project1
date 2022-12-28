@@ -6,6 +6,9 @@ const pwFalse = document.querySelector("#pwFalse")
 const items = document.querySelector("#items")
 const password = document.getElementById("userPw")
 const passwordCheck = document.getElementById("userPwCheck");
+const form = document.querySelector("#form")
+const userId = document.querySelector("#userId")
+const userName = document.querySelector("#userName")
 
 for(let i = 0; i<10; i++){
     formItem[0].classList ="itemAdd"
@@ -27,6 +30,18 @@ for(let i = 0; i<10; i++){
     formItem[i].addEventListener("click", clickHandler)
     
 }
+
+// function valueHandler (e){
+//     e.preventDefault()
+//     if (userId.value === undefined ){
+//         userId.focus()
+//         userId.scrollIntoView(true)
+//     }
+
+// }
+
+// form.addEventListener("submit", valueHandler )
+
 
 function keyHandler(e){
     console.log(e.keyCode)
