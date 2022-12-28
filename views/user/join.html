@@ -18,7 +18,8 @@
             <h2>환장의 나라 합류하기</h2>
             <div id="items_wrap">
                 <div id="items">
-                    <form method="post" action="/user/welcome" id="form">
+
+                    <form method="post" action="/user/welcome" enctype="multipart/form-data">
                         <div>
                             <span>아이디</span>
                             <div>
@@ -103,10 +104,11 @@
                                 <input type="text" id="telNum" name="telNum" placeholder="번호를 적어주세요">
                             </div>
                         </div>
+                        <div>
+                            <input type="file" name="upload">
+                        </div>
                         <div id="btn">
                             <button type="submit">완료!</button>
-                        </div>
-                        <div>
                         </div>
                     </form>
                 </div>

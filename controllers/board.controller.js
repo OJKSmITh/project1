@@ -8,29 +8,33 @@ exports.list = async (req, res, next) => {
 }
 
 exports.getWrite = async (req, res, next) => {
-    res.render('board/write.html')
+    const { token } = req.cookies
+    res.render("board/write.html", { token })
 }
 
 exports.postWrite = async (req, res, next) => {
     const { token } = req.cookies
-    const create = await service.postBoard(req.body.subject, req.body.content, token)
-    res.redirect('/board/list')
+    const { subject, content } = req.body
+    const create = await service.postBoard(subject, content, token)
+    const { idx } = await service.lastValue()
+    res.redirect(`/board/view?idx=${idx}`)
 }
 
 exports.view = async (req, res, next) => {
-    const [view] = await service.getView(req.query.idx)
+    const { subject, content, writer, registerDate, idx } = await service.getView(req.query.idx)
+    const { token } = req.cookies
     const plus = await service.hPlus(req.query.idx)
-    res.render('board/view.html', { view })
+    res.render('board/view.html', { subject, content, writer, registerDate, idx, token })
 }
 
 exports.getModify = async (req, res, next) => {
-    const [modify] = await service.getView(req.query.idx)
-    res.render('board/modify.html', { modify })
+    const { idx, subject, writer, content, registerDate } = await service.getView(req.query.idx)
+    res.render('board/modify.html', { idx, subject, writer, content, registerDate })
 }
 
 exports.postModify = async (req, res, next) => {
-    // console.log(req.query.idx)
-    const modify = await service.pModify(req.query.idx, req.body.subject, req.body.content, req.body.writer)
+    const { idx, subject, content, writer } = req.body
+    const modify = await service.pModify(idx, subject, content, writer)
     res.redirect(`/board/view?idx=${req.query.idx}`)
 }
 

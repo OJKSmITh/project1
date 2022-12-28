@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/root.css">
     <link rel="stylesheet" href="/css/header.css">
 </head>
 
@@ -24,10 +25,10 @@
             </div>
         </header>
         <div id='gnb' class="gnboff">
-            <div id="profilePic"><img src="" alt="사진"></div>
-            <div class="gnbtext">{{userId}} 로그인</div>
+            <div id="profilePic"><img src="{{}}" alt="사진"></div>
+            <div class="gnbtext">{{token}} 로그인</div>
             <div>
-                <a href="/profile/view">내 정보</a>
+                <a href="/profile/view?idx={{idx}}">내 정보</a>
                 <a href="/user/logout">로그아웃</a>
                 <a href="/board/list">게시판</a>
             </div>

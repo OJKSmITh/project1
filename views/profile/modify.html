@@ -21,14 +21,16 @@
                     원123123
                 </div>
                 <h1>{{userId}}님의 정보 수정</h1>
-                <form action="/profile/view" method="post" >
+                <form method="post" action="/profile/modify?idx={{idx}}">
                     <div id="info">
                         <ul>
                             <li>닉네임</li>
-                            <input type="text" value="{{nickname}}">                        </ul>
+                            <input type="text" name="nickName" value="{{nickName}}">
+                        </ul>
                         <ul>
                             <li>이름</li>
-                            <input type="text" value="{{name}}">                        </ul>
+                            <input type="text" name="userName" value="{{userName}}">
+                        </ul>
                         <ul>
                             <li>성별</li>
                             <select name="gender" id="gender" value="{{gender}}">
@@ -38,11 +40,11 @@
                         </ul>
                         <ul>
                             <li>전화번호</li>
-                            <input type="text" value="{{telNum}}">
+                            <input type="text" value="{{telNum}}" name="telNum">
                         </ul>
                         <ul>
                             <li>핸드폰번호</li>
-                            <input type="text" value="{{phoneNum}}">
+                            <input type="text" value="{{phoneNum}}" name="phoneNum">
                         </ul>
                     </div>
                     <div id="btns">
@@ -51,10 +53,9 @@
                         </button>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
-
 </body>
-
 </html>
