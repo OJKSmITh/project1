@@ -2,23 +2,27 @@ html {
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
-*{
+
+* {
     position: relative;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     z-index: 500;
 }
-a{
+
+a {
     text-decoration: none;
 }
-#wrap{
+
+#wrap {
     width: 100vw;
     height: 100vh;
 }
+
 /* header start */
 
-.header{
+.header {
     display: flex;
     /* position: absolute; */
     justify-content: space-between;
@@ -26,23 +30,28 @@ a{
     padding: 1rem 3rem 1rem 0;
     height: 9vh;
 }
-.header > h1 {
+
+.header>h1 {
     margin: 0;
     padding: 0;
 }
+
 .hamburger_btn {
     cursor: pointer;
     display: block;
     float: right;
     transition: all 1s;
 }
+
 .hamburger_btn:hover {
     transform: translateY(0.3rem);
 }
-.hamburger_btn:hover > .hamburger {
+
+.hamburger_btn:hover>.hamburger {
     background-color: rgb(214, 161, 69);
     transition: all 1s;
 }
+
 /* .hamburger_btn > .num1, .num2, .num3 {
     transition: all 1s;
 }
@@ -73,7 +82,7 @@ a{
 
 /* gnb start */
 .gnboff {
-    position:absolute;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,8 +93,9 @@ a{
     transition: 1s;
     background-color: var(--content-box);
 }
-.gnbon{
-    position:absolute;
+
+.gnbon {
+    position: absolute;
     z-index: 999;
     display: flex;
     flex-direction: column;
@@ -97,7 +107,9 @@ a{
     transition: 1s;
     background-color: var(--content-box);
 }
-#gnb > div > a:nth-child(1), a:nth-child(2) {
+
+#gnb>div>a:nth-child(1),
+a:nth-child(2) {
     display: inline-block;
     margin: 1rem;
     font-size: 2rem;
@@ -105,7 +117,8 @@ a{
     text-align: center;
     border: 00.15rem solid #939393
 }
-#gnb > div > a:nth-child(3){
+
+#gnb>div>a:nth-child(3) {
     display: block;
     margin: 1rem;
     font-size: 2rem;
@@ -113,41 +126,45 @@ a{
     text-align: center;
     border: 00.15rem solid #939393
 }
-.gnbtext{
+
+.gnbtext {
     margin: 3rem 0;
     font-size: 3rem;
 }
 
-#profilePic > img {
+#profilePic>img {
     display: flex;
     width: 15rem;
     height: 15rem;
-    margin-top: 5rem ;
+    margin-top: 5rem;
     background-color: wheat;
     border-radius: 7.5rem;
-    
+
 }
+
 /* gnb end */
 
 /* container start */
-#container_wrap{
+#container_wrap {
     height: 91vh;
     overflow: scroll;
     background-color: var(--background-color);
     width: 100%;
-    background: url(/public/img/blockchain.jpg);
+    background: url(/img/blockchain.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
 }
+
 #container {
     display: flex;
     flex-direction: column;
     align-items: center;
 
 }
-#container > h1 {
+
+#container>h1 {
     /* position: absolute; */
     left: 5rem;
     height: 91vh;
@@ -158,23 +175,26 @@ a{
     background-size: cover;
     background-attachment: fixed;
 }
-.bg2{
+
+.bg2 {
     height: 100%;
     margin-top: 10vh;
     margin-bottom: 10vh;
-    background-image:url(/public/img/blockchain2.jpg);
+    background-image: url(/img/blockchain2.jpg);
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: cover;
     background-attachment: fixed;
 }
-.bg3{
+
+.bg3 {
     height: 100%;
-    background-image:url(/public/img/blockchain3.jpg);
+    background-image: url(/img/blockchain3.jpg);
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: cover;
     /*이 속성을 써 줘야지만 저런 결과물을 낼수가 있습니다.*/
     background-attachment: fixed;
 }
+
 /* container end */

@@ -13,30 +13,30 @@
 <body>
     <div id="content_wrap">
         <div id="logo">
-            <a href="/"><img src="/img/logo.png" alt=""></a>
+            <a href="/"><img src="/img/logo.png"></a>
         </div>
         <div id="write_content">
-            <form class="write">
+            <form class="write" method="post" action="/board/view?idx={{idx}}">
                 <ul class="subject">
                     <li>
-                        <input type="text" name="subject" value="{{modify.subject}}">
+                        <input type="text" name="subject" value="{{subject}}">
                     </li>
                 </ul>
                 <ul class="name">
                     <li>작성자 : {{userId}}
                         <input type="hidden" name="writer">
                     </li>
-                    <li>22.12.18 {{registerDate}}</li>
+                    <li>{{registerDate}}</li>
                 </ul>
-                <ul class="content"> 
+                <ul class="content">
                     <li>내용</li>
                     <li>
-                        <textarea name="content">{{modify.content}}</textarea>
+                        <textarea name="content">{{content}}</textarea>
                     </li>
                 </ul>
                 <div id="btns">
                     <button type="submit">
-                        수정완료    
+                        수정완료
                     </button>
                 </div>
             </form>
@@ -45,7 +45,3 @@
 </body>
 
 </html>
-
-
-
-
