@@ -108,6 +108,10 @@ a {
     transition: 1s;
     background-color: var(--content-box);
 }
+#gnb > img {
+    width: 23vw;
+    margin: 0 auto;
+}
 
 #gnb>div>a:nth-child(1),
 a:nth-child(2) {
@@ -140,7 +144,6 @@ a:nth-child(2) {
     margin-top: 5rem;
     background-color: wheat;
     border-radius: 7.5rem;
-
 }
 
 /* gnb end */
@@ -180,5 +183,5 @@ a:nth-child(2) {
     width: 100vw;
     height: 100vh;
     background-color: #453a33;
-    margin-bottom: 50rem;
+    margin-bottom: 40rem;
 }

@@ -39,9 +39,10 @@ li {
     height: 70vh;
 }
 
-#icon {
+#profilePic > img{
     width: 8vw;
-    height: 8vh;
+    height: 8vw;
+
     border-radius: 4vw;
 }
 

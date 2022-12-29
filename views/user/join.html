@@ -6,19 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/join.css">
-    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/public/css/header.css">
+    <link rel="stylesheet" href="/public/css/join.css">
+    <link rel="stylesheet" href="/public/css/root.css">
 </head>
 
 <body>
     <div id="wrap">
         <div id="joinpage">
-            <h1><img src="/img/logo.png"></h1>
+            <h1><a href="/"><img src="/public/img/logo.png"></a></h1>
             <h2>환장의 나라 합류하기</h2>
             <div id="items_wrap">
                 <div id="items">
-
                     <form method="post" action="/user/welcome" enctype="multipart/form-data">
                         <div>
                             <span>아이디</span>
@@ -101,10 +100,10 @@
                                     <option value="063">063</option>
                                     <option value="064">064</option>
                                 </select>
-                                <input type="text" id="telNum" name="telNum" placeholder="번호를 적어주세요">
+                                <input type="text" id="telNum" name="telNum" placeholder="번호를 적어주세요" part="[0-9]{3}{4}-[0-9]{4}">
                             </div>
                         </div>
-                        <div>
+                        <div id="upload">
                             <input type="file" name="upload">
                         </div>
                         <div id="btn">
@@ -115,7 +114,7 @@
             </div>
         </div>
     </div>
-    <script src="/js/join.js"></script>
+    <script src="/public/js/join.js"></script>
 </body>
 
 </html>

@@ -21,6 +21,7 @@ input, textarea{
     background-color: var(--background-color);
 }
 #logo > a > img{
+    margin-left: 10rem;
     width: 20vw;
 }
 #write_content{
@@ -30,9 +31,10 @@ input, textarea{
     justify-content: space-between;
     align-items: center;
     background-color: var(--content-box);
+    margin-right: 10rem;
     padding :3rem;
-    width:65vw;
-    height: 80vh;
+    width:50vw;
+    height: 75vh;
 }
 .write {
     position: relative;
@@ -69,7 +71,7 @@ input, textarea{
     align-items: center;
     justify-content: space-between;
     height: 5%;
-    padding: 0.7rem 1.4rem 0.7rem 2.8rem ;
+    padding: 0.7rem 2.8rem 0.7rem 2.8rem ;
 
 }
 .write > .content {

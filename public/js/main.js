@@ -14,16 +14,19 @@ bg_wrap.addEventListener('scroll', function () {    //스크롤시 이벤트가 
     let value = bg_wrap.scrollY;    //세로 스크롤 값을 value 함수에 저장한다.
     // console.log(bg_wrap.scrollTop)
     let value2 = window.innerHeight
-    if (bg_wrap.scrollTop < value2 * 1.54) {
+
+    console.log(value2)
+    if(bg_wrap.scrollTop < value2 * 1.54){
         bg_wrap.style.background = "url(/img/logo.png) no-repeat 50% 50%"
     }
-    if (bg_wrap.scrollTop > value2 * 1.54) {
+    if(bg_wrap.scrollTop > value2 * 1.54){
         bg_wrap.style.backgroundImage = "url(/img/blockchain2.jpg)"
     }
-    if (bg_wrap.scrollTop > value2 * 1.54 * 2) {
+    if(bg_wrap.scrollTop > value2 * 1.54 * 2){
         bg_wrap.style.backgroundImage = "url(/img/blockchain.jpg)"
     }
-    if (bg_wrap.scrollTop > value2 * 1.54 * 3) {
+    if(bg_wrap.scrollTop > value2 * 1.54 * 3){
+
         bg_wrap.style.backgroundImage = "url(/img/blockchain2.jpg)"
     }
 
