@@ -3,7 +3,8 @@ const service = require("../services/profile.service")
 exports.getProfile = async (req, res, next) => {
     const { token } = req.cookies
     const { userId, userName, gender, phoneNum, telNum, nickName, idx } = await service.tokenInsert(token)
-    res.render("profile/view.html", { userId, nickName, userName, gender, phoneNum, telNum, idx })
+    const { image } = await service.fImage(token)
+    res.render("profile/view.html", { userId, nickName, userName, gender, phoneNum, telNum, idx, image })
 }
 
 exports.getModify = async (req, res, next) => {
@@ -18,3 +19,4 @@ exports.postModify = async (req, res, next) => {
     const result = await service.cValue(nickName, userName, gender, telNum, phoneNum, idx)
     res.redirect("/profile/view")
 }
+
