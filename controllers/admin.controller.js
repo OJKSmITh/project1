@@ -12,7 +12,6 @@ exports.getList = async (req, res, next) => {
 
 exports.Delete = async (req, res, next) => {
     const { idx } = req.query
-
     await service.fDelete(idx)
     res.redirect('/admin/list')
 }
@@ -35,4 +34,21 @@ exports.postWrite = async (req, res, next) => {
     const create = await service.postBoard(subject, content, token)
     const { idx } = await service.lastValue()
     res.redirect(`/admin/view?idx=${idx}`)
+}
+
+exports.getModify = async (req, res, next) => {
+    const { idx, subject, writer, content, registerDate } = await service.getView(req.query.idx)
+    res.render('admin/modify.html', { idx, subject, writer, content, registerDate })
+}
+
+exports.postModify = async (req, res, next) => {
+    const { idx, subject, content, writer } = req.body
+    const modify = await service.pModify(idx, subject, content, writer)
+    res.redirect(`/admin/view?idx=${req.query.idx}`)
+}
+
+exports.manageView = async (req, res, next) => {
+    const { token } = req.cookies
+    const list = await service.fUser()
+    res.render('admin/manage.html', { list, token })
 }

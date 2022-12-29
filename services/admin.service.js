@@ -24,3 +24,13 @@ exports.lastValue = async () => {
     const result = await admin.findLast()
     return result
 }
+
+exports.pModify = async (idx, subject, content, writer) => {
+    const result = await admin.postModify(idx, subject, content, writer)
+    return result
+}
+
+exports.fUser = async () => {
+    const result = await admin.findUser()
+    return result
+}

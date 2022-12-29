@@ -13,33 +13,33 @@
 <body>
     <div id="content_wrap">
         <div id="logo">
-            <a href="/"><img src="/img/logo2.png" alt=""></a>
+            <a href="/"><img src="/img/logo2.png"></a>
         </div>
         <div id="write_content">
-            <form method="post" action="/board/write?idx={{idx}}" class="write">
+            <form class="write" method="post" action="/admin/view?idx={{idx}}">
+                <li>
+                    <input type="hidden" value="{{idx}}" name="idx">
+                </li>
                 <ul class="subject">
                     <li>
-                        <span>제목 : </span>
-                        <input type="text" name="subject" placeholder="   제목을 입력해 주세요.">
+                        <input type="text" name="subject" value="{{subject}}">
                     </li>
                 </ul>
                 <ul class="name">
-                    <li>
-                        <span>작성자 : {{token}}</span>
-                        <input type="hidden" name="writer">
+                    <li>작성자 : {{writer}}
+                        <input type="hidden" name="writer" value="{{writer}}">
                     </li>
                     <li>{{registerDate}}</li>
-
                 </ul>
                 <ul class="content">
                     <li>내용</li>
                     <li>
-                        <textarea name="content" placeholder="내용을 입력해 주세요."></textarea>
+                        <textarea name="content">{{content}}</textarea>
                     </li>
                 </ul>
                 <div id="btns">
                     <button type="submit">
-                        글 작성하기
+                        수정완료
                     </button>
                 </div>
             </form>
