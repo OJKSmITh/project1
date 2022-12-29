@@ -16,18 +16,18 @@ bg_wrap.addEventListener('scroll', function () {    //스크롤시 이벤트가 
     console.log(value2)
 
     console.log(value2)
-    if(bg_wrap.scrollTop < value2 * 1.64 ){
-        bg_wrap.style.background = "url(/public/img/jang_bg.jpeg) no-repeat 50% 50%"
-    }      
-    if(bg_wrap.scrollTop > value2 * 1.64){
-        bg_wrap.style.background = "url(/public/img/baek_bg.jpeg) cover"
+    if (bg_wrap.scrollTop < value2 * 1.64) {
+        bg_wrap.style.background = "url(/img/jang_bg.jpeg) no-repeat 50% 50%"
     }
-    if(bg_wrap.scrollTop > value2 * 1.64 * 2){
-        bg_wrap.style.backgroundImage = "url(/public/img/logo2.png) no-repeat 50% 50%"
+    if (bg_wrap.scrollTop > value2 * 1.64) {
+        bg_wrap.style.background = "url(/img/baek_bg.jpeg) cover"
+    }
+    if (bg_wrap.scrollTop > value2 * 1.64 * 2) {
+        bg_wrap.style.backgroundImage = "url(/img/logo2.png) no-repeat 50% 50%"
     }
     // if(bg_wrap.scrollTop > value2 * 1.04 * 3){
 
-        // bg_wrap.style.backgroundImage = "url(/public/img/blockchain2.jpg)"
+    // bg_wrap.style.backgroundImage = "url(/public/img/blockchain2.jpg)"
     // }
 
 })
