@@ -16,8 +16,10 @@ exports.fToken = async (token) => {
     const result = await user.findtoken(token)
     return result
 }
-
+// [{a},{b}] =>{a,b}
 exports.fImage = async (token) => {
     const result = await user.findImage(token)
     return result
 }
+
+
