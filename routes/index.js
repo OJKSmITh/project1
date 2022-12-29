@@ -9,6 +9,6 @@ const admin = require("./admin.route")
 router.use("/user", user)
 router.use("/board", board)
 router.use("/profile", profile)
-// router.user("/admin", admin)
+router.use("/admin", admin)
 
 module.exports = router

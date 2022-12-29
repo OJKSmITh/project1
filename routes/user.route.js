@@ -37,6 +37,8 @@ router.get('/logout', controller.logout)
 
 //========================================== profile
 
+
+
 module.exports = router
 
 // 라우터: 패턴을 쓰고 있기때문에 공유가됨 

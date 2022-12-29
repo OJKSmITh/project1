@@ -15,6 +15,7 @@
     <div id="wrap">
         <div id="joinpage">
             <h1><a href="/"><img src="/img/logo2.png"></a></h1>
+
             <h2>환장의 나라 합류하기</h2>
             <div id="items_wrap">
                 <div id="items">
@@ -22,7 +23,8 @@
                         <div>
                             <span>아이디</span>
                             <div>
-                                <input type="text" name="userId" id="userId">
+                                <input type="text" name="userId" id="userId" class="check">
+
                             </div>
                         </div>
                         <div>
@@ -52,7 +54,7 @@
                         <div>
                             <span>닉네임</span>
                             <div>
-                                <input type="text" name="nickName" id="userName">
+                                <input type="text" name="nickName" id="nickName">
                             </div>
                         </div>
                         <div>
@@ -100,7 +102,8 @@
                                     <option value="063">063</option>
                                     <option value="064">064</option>
                                 </select>
-                                <input type="text" id="telNum" name="telNum" placeholder="번호를 적어주세요" part="[0-9]{3}{4}-[0-9]{4}">
+                                <input type="text" id="telNum" name="telNum" placeholder="번호를 적어주세요"
+                                    part="[0-9]{3}{4}-[0-9]{4}">
                             </div>
                         </div>
                         <div id="upload">
@@ -115,6 +118,7 @@
         </div>
     </div>
     <script src="/js/join.js"></script>
+    <script src="/js/auth.js"></script>
 </body>
 
 </html>
