@@ -37,7 +37,6 @@ ul, li{
 #profilePic > img{
     width: 8vw;
     height: 8vw;
-    background-color: pink;
     border-radius: 4vw;
 }
 #profile_con{

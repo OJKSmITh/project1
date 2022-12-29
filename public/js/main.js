@@ -12,22 +12,22 @@ gnbBtn.addEventListener("click", gnbBtnHandler)
 
 bg_wrap.addEventListener('scroll', function () {    //스크롤시 이벤트가 실행된다.
     let value = bg_wrap.scrollY;    //세로 스크롤 값을 value 함수에 저장한다.
-    // console.log(bg_wrap.scrollTop)
     let value2 = window.innerHeight
+    console.log(value2)
 
     console.log(value2)
-    if(bg_wrap.scrollTop < value2 * 1.54){
-        bg_wrap.style.background = "url(/img/logo.png) no-repeat 50% 50%"
+    if(bg_wrap.scrollTop < value2 * 1.64 ){
+        bg_wrap.style.background = "url(/public/img/jang_bg.jpeg) no-repeat 50% 50%"
+    }      
+    if(bg_wrap.scrollTop > value2 * 1.64){
+        bg_wrap.style.background = "url(/public/img/baek_bg.jpeg) cover"
     }
-    if(bg_wrap.scrollTop > value2 * 1.54){
-        bg_wrap.style.backgroundImage = "url(/img/blockchain2.jpg)"
+    if(bg_wrap.scrollTop > value2 * 1.64 * 2){
+        bg_wrap.style.backgroundImage = "url(/public/img/logo2.png) no-repeat 50% 50%"
     }
-    if(bg_wrap.scrollTop > value2 * 1.54 * 2){
-        bg_wrap.style.backgroundImage = "url(/img/blockchain.jpg)"
-    }
-    if(bg_wrap.scrollTop > value2 * 1.54 * 3){
+    // if(bg_wrap.scrollTop > value2 * 1.04 * 3){
 
-        bg_wrap.style.backgroundImage = "url(/img/blockchain2.jpg)"
-    }
+        // bg_wrap.style.backgroundImage = "url(/public/img/blockchain2.jpg)"
+    // }
 
 })

@@ -13,7 +13,7 @@
 <body>
     <div id="content_wrap">
         <div id="logo">
-            <a href="/"><img src="/img/logo.png" alt=""></a>
+            <a href="/"><img src="/img/logo2.png" alt=""></a>
         </div>
         <div id="view_content">
             <div class="view">
@@ -30,7 +30,6 @@
                 </ul>
             </div>
             <div id="btns">
-                <button><a href="/board/list">돌아가기</a></button>
                 {% if token === writer %}
                 <button><a href="/board/modify?idx={{idx}}">수정하기</a></button>
                 <button><a href="/board/delete?idx={{idx}}">삭제하기</a></button>
@@ -41,6 +40,7 @@
                 <button><a href="/board/delete?idx={{idx}}">삭제하기</a></button>
                 {% else %}
                 {% endif %}
+                <button><a href="/board/list">돌아가기</a></button>
             </div>
         </div>
     </div>
