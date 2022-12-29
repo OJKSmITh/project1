@@ -36,7 +36,9 @@ exports.getInsert = (req, res, next) => {
 exports.postInsert = async (req, res, next) => {
     const { userId, userPw, userName, nickName, birth, gender, phoneNum, telNum, idx } = req.body
     const insert = await service.insert(userId, userPw, userName, nickName, birth, gender, phoneNum, telNum, req.file.filename)
-    res.render("user/welcome.html", { userId, userName, gender, phoneNum, telNum })
+    const { token } = req.cookies
+    const { image } = await service.fImage(token)
+    res.render("user/welcome.html", { userId, userName, gender, phoneNum, telNum, image })
 
 }
 
