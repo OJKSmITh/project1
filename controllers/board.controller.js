@@ -15,6 +15,7 @@ exports.getWrite = async (req, res, next) => {
 exports.postWrite = async (req, res, next) => {
     const { token } = req.cookies
     const { subject, content } = req.body
+    if (subject === "" && content === "") return next(new Error("값을 넣어주세요"))
     const create = await service.postBoard(subject, content, token)
     const { idx } = await service.lastValue()
     res.redirect(`/board/view?idx=${idx}`)
@@ -41,4 +42,21 @@ exports.postModify = async (req, res, next) => {
 exports.Delete = async (req, res, next) => {
     const Delete = await service.fDelete(req.query.idx)
     res.redirect('/board/list')
+}
+
+exports.findValue = async (req, res, next) => {
+    const { index } = req.query
+
+    // console.log(writer, registerDate)
+    if (index === "hit") {
+        const findHit = await service.fHit()
+        res.render("board/view1.html", { findHit })
+    }
+    // } else if (index === "userId") {
+    //     const findUser = await service.fId(userId)
+    //     res.render("board/view1.html", { findUser })
+    // } else {
+    //     const findRegister = await service.fRegister(registerDate)
+    //     res.render("board/view1.html", { findRegister })
+    // }
 }
