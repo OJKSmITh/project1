@@ -34,3 +34,20 @@ exports.findUser = async () => {
     const [result] = await pool.query(`SELECT idx, userId, level FROM user order by idx limit 1, 10;`)
     return result
 }
+
+exports.approve1 = async (userId) => {
+    const [result] = await pool.query(`UPDATE user SET level='1' where userId="${userId}"`)
+    return result
+}
+
+
+exports.levelDown = async (userId) => {
+    const [result] = await pool.query(`UPDATE user SET level=level-1 where userId="${userId}"`)
+    return result
+}
+
+exports.levelUp = async (userId) => {
+    const [result] = await pool.query(`UPDATE user SET level=level+1 where userId="${userId}"`)
+    return result
+}
+

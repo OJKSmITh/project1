@@ -34,3 +34,18 @@ exports.fUser = async () => {
     const result = await admin.findUser()
     return result
 }
+
+exports.useApprove = async (userId) => {
+    const result = await admin.approve1(userId)
+    return result
+}
+
+exports.lDown = async (userId) => {
+    const result = await admin.levelDown(userId)
+    return result
+}
+
+exports.lUp = async (userId) => {
+    const result = await admin.levelUp(userId)
+    return result
+}
