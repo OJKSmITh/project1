@@ -6,25 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/root.css">
-    <link rel="stylesheet" href="/css/boardWrite.css">
+    <link rel="stylesheet" href="/public/css/root.css">
+    <link rel="stylesheet" href="/public/css/boardWrite.css">
 </head>
 
 <body>
     <div id="content_wrap">
         <div id="logo">
-            <a href="/"><img src="/img/logo.png" alt=""></a>
+            <a href="/"><img src="/public/img/logo2.png" alt=""></a>
         </div>
         <div id="write_content">
             <form method="post" action="/board/write?idx={{idx}}" class="write">
                 <ul class="subject">
                     <li>
-                        제목 :
+                        <span>제목 : </span>
                         <input type="text" name="subject" placeholder="   제목을 입력해 주세요.">
                     </li>
                 </ul>
                 <ul class="name">
-                    <li>작성자 : {{token}}
+                    <li>
+                        <span>작성자 : {{token}}</span>
                         <input type="hidden" name="writer">
                     </li>
                     <li>{{registerDate}}</li>

@@ -14,15 +14,14 @@
     <div id="profile_wrap">
         <div id="profile_con">
             <div id="logo">
-                <a href="/"><img src="/img/logo.png"></a>
+                <a href="/"><img src="/img/logo2.png"></a>
             </div>
             <div id="profile_view">
-
                 <div id="profilePic">
                     <img src="/image/{{image}}">
                 </div>
                 <h1>{{userId}}님의 정보</h1>
-                <div>
+                <div id="info_wrap">
                     <div id="info">
                         <ul>
                             <li>닉네임</li>
@@ -45,22 +44,17 @@
                             <span>{{phoneNum}}</span>
                         </ul>
                     </div>
-                </div>
-                <div id="btns">
-                    <a href="/profile/modify?idx={{idx}}" id="button">
-                        수정하기
-                    </a>
-                    <a href="/user/main2" id="button">
-                        돌아가기
-                    </a>
+                    <div id="btns">
+                        <a href="/profile/modify?idx={{idx}}" id="button">
+                            수정하기
+                        </a>
+                        <a href="/user/main2" id="button">
+                            돌아가기
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <button><a href="/profile/modify?idx={{idx}}">
-            수정하기
-        </a></button>
-    </div>
     </div>
 </body>
 

@@ -61,6 +61,9 @@ ul{
     background-color: rgb(95, 113, 113)
 }
 li{
+    height: 2.2rem;
+    width: 20rem;
+    text-align: center;
     font-size: 1.7rem;
     margin-bottom: 0.6rem;
 }

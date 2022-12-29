@@ -8,9 +8,11 @@ exports.getProfile = async (req, res, next) => {
 }
 
 exports.getModify = async (req, res, next) => {
+    const { token } = req.cookies
     const { idx } = req.query
     const { nickName, userName, gender, telNum, phoneNum } = await service.fValue(idx)
-    res.render("profile/modify.html", { nickName, userName, gender, telNum, phoneNum, idx })
+    const { image } = await service.fImage(token)
+    res.render("profile/modify.html", { nickName, userName, gender, telNum, phoneNum, idx, image })
 }
 
 exports.postModify = async (req, res, next) => {

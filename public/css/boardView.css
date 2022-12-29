@@ -84,10 +84,13 @@ ul, li{
     border-left: solid 0.1rem var(--border-color);
 }
 #btns {
+    display: flex;
+    justify-content: flex-end;
     position: absolute;
+    float: right;
     bottom: 5rem;
     right:2rem;
-    width: 32rem;
+    width: 30rem;
 }
 button {
     border: none;

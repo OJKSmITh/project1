@@ -60,7 +60,7 @@ input, textarea{
     margin: 0.2rem ;
 }
 .subject > li > input {
-    width: 100%;
+    width: 70%;
     height: 100%;
     font-size: 2rem;
     /* border: solid 0.1rem var(--border-color); */
@@ -104,7 +104,6 @@ input, textarea{
     
 }
 #btns {
-    right: 0;
     bottom: 3rem;
     right:2rem;
 }
