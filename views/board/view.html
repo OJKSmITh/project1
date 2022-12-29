@@ -30,12 +30,7 @@
                 </ul>
             </div>
             <div id="btns">
-                {% if token === writer %}
-                <button><a href="/board/modify?idx={{idx}}">수정하기</a></button>
-                <button><a href="/board/delete?idx={{idx}}">삭제하기</a></button>
-                {% else %}
-                {% endif %}
-                {% if token === 'admin' %}
+                {% if token === writer and 'admin' %}
                 <button><a href="/board/modify?idx={{idx}}">수정하기</a></button>
                 <button><a href="/board/delete?idx={{idx}}">삭제하기</a></button>
                 {% else %}

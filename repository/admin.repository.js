@@ -24,3 +24,13 @@ exports.findLast = async () => {
     const [[result]] = await pool.query(`SELECT * FROM board WHERE idx = (SELECT MAX(idx) FROM board)`)
     return result
 }
+
+exports.postModify = async (idx, subject, content, writer) => {
+    const [result] = await pool.query(`UPDATE board SET subject="${subject}", content="${content}", writer="${writer}" WHERE idx=${idx} ORDER BY idx ASC`)
+    return result
+}
+
+exports.findUser = async () => {
+    const [result] = await pool.query(`SELECT idx, userId, level FROM user order by idx limit 1, 10;`)
+    return result
+}
