@@ -70,7 +70,7 @@ a {
 } */
 .hamburger {
     display: block;
-    margin: 0.3rem 0;
+    margin: 0.3rem 0; 
     width: 2rem;
     height: 0.25rem;
     border-radius: 0.125rem;
@@ -107,6 +107,7 @@ a {
     opacity: 1;
     transition: 1s;
     background-color: var(--content-box);
+    box-shadow: -5px -5px 15px #666;
 }
 
 #gnb>img {
@@ -143,7 +144,7 @@ a:nth-child(2) {
     width: 15rem;
     height: 15rem;
     margin-top: 5rem;
-    background-color: wheat;
+    background-color: var(--background-color);
     border-radius: 7.5rem;
 }
 
@@ -153,9 +154,9 @@ a:nth-child(2) {
 #container_wrap {
     height: 91vh;
     overflow: scroll;
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
     width: 100%;
-    background: url(/img/blockchain.jpg);
+    /* background: url(/img/blockchain.jpg); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -169,7 +170,7 @@ a:nth-child(2) {
 
 }
 
-#container>h1 {
+/* #container>h1 {
     left: 5rem;
     height: 91vh;
     margin-top: 100vh;
@@ -180,7 +181,7 @@ a:nth-child(2) {
     background-size: cover;
 
     background-attachment: scroll fixed;
-}
+} */
 
 
 
@@ -262,7 +263,7 @@ a:nth-child(2) {
     align-items: center;
     width: 40rem;
     height: 60rem;
-    margin: 150rem 0 100rem 0;
+    margin: 180rem 0 0rem 0;
     padding: 3.6em 1.4rem;
     background-color: var(--content-box);
     border-radius: 2rem;
@@ -274,11 +275,15 @@ a:nth-child(2) {
     align-items: center;
     width: 40rem;
     height: 60rem;
-    margin: 170rem 0 50rem 0;
+    margin: 175rem 0 50rem 0;
     padding: 3.6em 1.4rem;
     background-color: var(--content-box);
     border-radius: 2rem;
     box-shadow: 5px 5px 15px #666;
+}
+#scroll2 {
+    margin-bottom: 90rem;
+
 }
 .scroll2_2{
     position: sticky;

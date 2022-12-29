@@ -15,19 +15,20 @@ bg_wrap.addEventListener('scroll', function () {    //스크롤시 이벤트가 
     let value2 = window.innerHeight
     console.log(value2)
 
-    console.log(value2)
-    if (bg_wrap.scrollTop < value2 * 1.64) {
-        bg_wrap.style.background = "url(/img/jang_bg.jpeg) no-repeat 50% 50%"
-    }
-    if (bg_wrap.scrollTop > value2 * 1.64) {
-        bg_wrap.style.background = "url(/img/baek_bg.jpeg) cover"
-    }
-    if (bg_wrap.scrollTop > value2 * 1.64 * 2) {
-        bg_wrap.style.backgroundImage = "url(/img/logo2.png) no-repeat 50% 50%"
-    }
-    // if(bg_wrap.scrollTop > value2 * 1.04 * 3){
 
-    // bg_wrap.style.backgroundImage = "url(/public/img/blockchain2.jpg)"
-    // }
+    console.log(bg_wrap.scrollTop)
+    if(bg_wrap.scrollTop < value2 * 1.78 ){
+        bg_wrap.style.background = "url(/img/jang_bg.jpeg) no-repeat 50% 50%"
+    }      
+    if(bg_wrap.scrollTop > value2 * 1.78){
+        bg_wrap.style.background = "url(/img/jang_bg.jpeg) no-repeat 50% 50% "
+    }
+    if(bg_wrap.scrollTop > value2 * 1.78 * 2){
+        bg_wrap.style.background = "url(/img/baek_bg.jpeg) no-repeat 50% 50% "
+    }    
+    if(bg_wrap.scrollTop > value2 * 1.9 * 3){
+        bg_wrap.style.background = "url(/img/logo2.png) no-repeat 50% 50%"
+    }
+
 
 })
