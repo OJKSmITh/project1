@@ -11,7 +11,7 @@ exports.postLogin = async (req, res, next) => {
         res.setHeader("Set-Cookie", `token=${create.userId};path=/`)
         res.redirect(`/user/main2`)
     } else {
-        res.redirect('/user/login')
+        next(new Error("아이디와 패스워드가 일치하지 않습니다."))
     }
 }
 // 3항
