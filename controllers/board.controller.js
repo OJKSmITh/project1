@@ -8,6 +8,8 @@ exports.list = async (req, res, next) => {
 }
 
 exports.getWrite = async (req, res, next) => {
+    const acc = req.cookies
+    if (Object.keys(acc).length === 0) return next(new Error("로그인을 해주세요!"))
     const { token } = req.cookies
     res.render("board/write.html", { token })
 }
@@ -22,6 +24,8 @@ exports.postWrite = async (req, res, next) => {
 }
 
 exports.view = async (req, res, next) => {
+    const acc = req.cookies
+    if (Object.keys(acc).length === 0) return next(new Error("로그인을 해주세요!"))
     const { subject, content, writer, registerDate, idx } = await service.getView(req.query.idx)
     const { token } = req.cookies
     const plus = await service.hPlus(req.query.idx)
@@ -29,11 +33,14 @@ exports.view = async (req, res, next) => {
 }
 
 exports.getModify = async (req, res, next) => {
+    const acc = req.cookies
+    if (Object.keys(acc).length === 0) return next(new Error("로그인을 해주세요!"))
     const { idx, subject, writer, content, registerDate } = await service.getView(req.query.idx)
     res.render('board/modify.html', { idx, subject, writer, content, registerDate })
 }
 
 exports.postModify = async (req, res, next) => {
+
     const { idx, subject, content, writer } = req.body
     const modify = await service.pModify(idx, subject, content, writer)
     res.redirect(`/board/view?idx=${req.query.idx}`)
