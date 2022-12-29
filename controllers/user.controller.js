@@ -8,8 +8,13 @@ exports.postLogin = async (req, res, next) => {
     const { userId, userPw } = req.body
     const create = await service.findLogin(userId, userPw)
     if (create !== undefined) {
-        res.setHeader("Set-Cookie", `token=${create.userId};path=/`)
-        res.redirect(`/user/main2`)
+        if (userId === "admin") {
+            res.setHeader("Set-Cookie", `token=${create.userId};path=/`)
+            res.redirect(`/admin/main`)
+        } else {
+            res.setHeader("Set-Cookie", `token=${create.userId};path=/`)
+            res.redirect(`/user/main2`)
+        }
     } else {
         next(new Error("아이디와 패스워드가 일치하지 않습니다."))
     }
@@ -39,5 +44,4 @@ exports.logout = (req, res, next) => {
     res.setHeader("Set-Cookie", `token=;path=/;max-Age=0;`)
     res.redirect('/')
 }
-
 

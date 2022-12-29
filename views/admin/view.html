@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/boardView.css">
+</head>
+
+<body>
+    <div id="content_wrap">
+        <div id="logo">
+            <a href="/"><img src="/img/logo.png"></a>
+        </div>
+        <div id="view_content">
+            <div class="view">
+                <ul class="subject">
+                    <li>{{subject}}</li>
+                </ul>
+                <ul class="name">
+                    <li>작성자 : {{writer}}</li>
+                    <li>작성일 : {{registerDate}}</li>
+                </ul>
+                <ul class="content">
+                    <li>내용</li>
+                    <li>{{content}}</li>
+                </ul>
+            </div>
+            <div id="btns">
+                <button><a href="/admin/list">돌아가기</a></button>
+                {% if token === writer %}
+                <button><a href="/admin/modify?idx={{idx}}">수정하기</a></button>
+                <button><a href="/admin/delete?idx={{idx}}">삭제하기</a></button>
+                {% else %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <script src="/js/board.view.js" type="text/javascript"></script>
+</body>
+
+</html>
