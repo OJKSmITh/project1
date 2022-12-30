@@ -3,7 +3,8 @@ const service = require("../services/board.service")
 exports.list = async (req, res, next) => {
     const acc = req.cookies
     if (Object.keys(acc).length === 0) return next(new Error("로그인을 해주세요!"))
-    const list = await service.getList()
+    const { page } = req.query
+    const list = await service.fPaging(page)
     res.render('board/list.html', { list })
 }
 

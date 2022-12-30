@@ -74,3 +74,9 @@ exports.fList = async (token) => {
     const result = await board.findList(token)
     return result
 }
+
+exports.fPaging = async (page) => {
+    const result = await board.paging(page)
+    return result
+}
+
