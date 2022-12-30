@@ -14,6 +14,7 @@
     <div id="boardList_wrap">
         <div id="boardList">
             <div id="title">
+
                 <a href="/user/main2"><img src="/img/logo2.png" ></a>
                 <span><a href="/board/list">환장의 나라 커뮤니티</a></span>
             </div>
@@ -27,14 +28,14 @@
                         <span><a href="/board/list">조회수</a></span>
                         <span>
                             <a href="/board/view1?index=hitup">
-                                <img src="/img/up.png" >
+                                <img src="/img/up.png">
                             </a>
                             <a href="/board/view1?index=hitdown">
-                                <img src="/img/down.png" >
+                                <img src="/img/down.png">
                             </a>
                         </span>
                     </ul>
-                    {% for item in list%}
+                    {% for item in list %}
                     <ul>
                         <li>{{loop.index}}</li>
                         <li><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></li>
@@ -44,7 +45,17 @@
                     </ul>
                     {% endfor %}
                 </div>
+                <form method="post" action="/board/view1">
+                    <select name="column">
+                        <option>제목</option>
+                        <option>작성자</option>
+                    </select>
+                    <input type="text" name="findValue">
+                    <button type="submit">검색</button>
+                </form>
+
                 <div id="page">
+
                     <form method="post" action="/board/view1" id="search">
                         <select name="column">
                             <option>제목</option>

@@ -48,3 +48,13 @@ exports.logout = (req, res, next) => {
     res.redirect('/')
 }
 
+exports.idcheck = (req, res, next) => {
+    const { userId } = req.body
+    const [item] = service.fIdcheck(userId)
+    let result = 1
+    if (item != undefined) result = 0
+    const response = {
+        result
+    }
+    res.send(JSON.stringify(response))
+}

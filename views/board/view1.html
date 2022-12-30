@@ -14,7 +14,7 @@
     <div id="boardList_wrap">
         <div id="boardList">
             <div id="title">
-                <a href="/user/main2"><img src="/img/logo2.png" ></a>
+                <a href="/user/main2"><img src="/img/logo2.png"></a>
                 <span>환장의 나라 커뮤니티</span>
             </div>
             <div id="board">
@@ -34,7 +34,8 @@
                             </a>
                         </span>
                     </ul>
-                    {% for item in findHit%}
+                    {% if index === "hitup" %}
+                    {% for item in findHitUp %}
                     <ul>
                         <li>{{loop.index}}</li>
                         <li><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></li>
@@ -43,6 +44,47 @@
                         <li>{{item.hit}}</li>
                     </ul>
                     {% endfor %}
+                    {% else %}
+                    {% endif %}
+
+                    {% if index === "hitdown" %}
+                    {% for item in findHitDown %}
+                    <ul>
+                        <li>{{loop.index}}</li>
+                        <li><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></li>
+                        <li>{{item.writer}}</li>
+                        <li>{{item.registerDate}}</li>
+                        <li>{{item.hit}}</li>
+                    </ul>
+                    {% endfor %}
+                    {% else %}
+                    {% endif %}
+
+                    {% if column === "제목" %}
+                    {% for item in result %}
+                    <ul>
+                        <li>{{loop.index}}</li>
+                        <li><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></li>
+                        <li>{{item.writer}}</li>
+                        <li>{{item.registerDate}}</li>
+                        <li>{{item.hit}}</li>
+                    </ul>
+                    {% endfor %}
+                    {% else %}
+                    {% endif %}
+
+                    {% if column === "작성자" %}
+                    {% for item in result2 %}
+                    <ul>
+                        <li>{{loop.index}}</li>
+                        <li><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></li>
+                        <li>{{item.writer}}</li>
+                        <li>{{item.registerDate}}</li>
+                        <li>{{item.hit}}</li>
+                    </ul>
+                    {% endfor %}
+                    {% else %}
+                    {% endif %}
                 </div>
                 <div id="page">
                     <span><a>1</a></span>
