@@ -25,6 +25,14 @@
                         <span>작성일</span>
                         <span>조회수</span>
                     </ul>
+                    <form method="get" action="/board/view1">
+                        <select name="index">
+                            <option value="hit">조회수</option>
+                            <option value="userId">아이디</option>
+                            <option value="registerDate">작성일</option>
+                        </select>
+                        <button type="submit">찾기</button>
+                    </form>
                     {% for item in list%}
                     <ul>
                         <li>{{loop.index}}</li>

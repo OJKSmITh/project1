@@ -52,3 +52,21 @@ exports.manageView = async (req, res, next) => {
     const list = await service.fUser()
     res.render('admin/manage.html', { list, token })
 }
+
+exports.approve = async (req, res, next) => {
+    const { userId } = req.query
+    const result = await service.useApprove(userId)
+    res.redirect('/admin/manage')
+}
+
+exports.lvdown = async (req, res, next) => {
+    const { userId } = req.query
+    const result = await service.lDown(userId)
+    res.redirect('/admin/manage')
+}
+
+exports.lvup = async (req, res, next) => {
+    const { userId } = req.query
+    const result = await service.lUp(userId)
+    res.redirect('/admin/manage')
+}

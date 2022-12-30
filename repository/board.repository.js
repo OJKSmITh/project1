@@ -39,3 +39,18 @@ exports.findLast = async () => {
     const [[result]] = await pool.query(`SELECT * FROM board WHERE idx = (SELECT MAX(idx) FROM board)`)
     return result
 }
+
+exports.findHit = async () => {
+    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board ORDER BY hit DESC`)
+    return result
+}
+
+exports.findUserId = async (userId) => {
+    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where userId="${userId}"`)
+    return result
+}
+
+exports.findRegisterDate = async (register) => {
+    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where registerDate="${register}"`)
+    return result
+}

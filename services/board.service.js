@@ -40,3 +40,17 @@ exports.lastValue = async () => {
     return result
 }
 
+exports.fHit = async () => {
+    const result = await board.findHit()
+    return result
+}
+
+exports.fId = async (userId) => {
+    const result = await board.findUserId(userId)
+    return result
+}
+
+exports.fRegister = async (register) => {
+    const result = await board.findRegisterDate(register)
+    return result
+}

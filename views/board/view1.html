@@ -20,23 +20,18 @@
                 <div class="table">
                     <ul class="tableHeader">
                         <span>번호</span>
-                        <span>아이디</span>
-                        <span>레벨</span>
-                        <span>승인</span>
-                        <span>진급</span>
-                        <span>강등</span>
+                        <span>제목</span>
+                        <span>작성자</span>
+                        <span>작성일</span>
+                        <span>조회수</span>
                     </ul>
-                    {% for item in list%}
+                    {% for item in findHit%}
                     <ul>
                         <li>{{loop.index}}</li>
-                        <li>{{item.userId}}</li>
-                        <li>{{item.level}}</li>
-                        {% if item.level === 0 %}
-                        <li><button><a href="/admin/approve?userId={{item.userId}}">승인</a></button></li>
-                        {% else %}
-                        <li><button><a href="/admin/levelup?userId={{item.userId}}">진급</a></button></li>
-                        <li><button><a href="/admin/leveldown?userId={{item.userId}}">강등</a></button></li>
-                        {% endif %}
+                        <li><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></li>
+                        <li>{{item.writer}}</li>
+                        <li>{{item.registerDate}}</li>
+                        <li>{{item.hit}}</li>
                     </ul>
                     {% endfor %}
                 </div>
@@ -52,6 +47,7 @@
                     <span>9</span>
                     <span>10</span>
                 </div>
+                <a href="/board/write">글쓰기</a>
             </div>
         </div>
     </div>
