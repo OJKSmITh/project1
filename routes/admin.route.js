@@ -20,4 +20,9 @@ router.post('/view', controller.postModify)
 
 router.get('/manage', controller.manageView)
 
+router.get('/approve', controller.approve)
+
+router.get('/leveldown', controller.lvdown)
+
+router.get('/levelup', controller.lvup)
 module.exports = router
