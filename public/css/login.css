@@ -61,5 +61,5 @@ button {
     padding: var(--input-padding);
     color: var(--font-color) ;
     border: 0.1rem solid var(--border-color);
-    height: 3rem;
+    height: 4rem;
 }

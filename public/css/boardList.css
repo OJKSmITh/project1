@@ -7,6 +7,7 @@ html {
 }
 a{
     text-decoration: none;
+    color: #333333;
 }
 ul, li{
     list-style: none;
@@ -28,53 +29,67 @@ ul, li{
     align-items: center;
 }
 #title{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
     font-size: 3rem;
     color:var(--main_fontcolor);
 }
+#title > span {
+    width:46rem;
+    font-size: 4.5rem;
+    text-align: center;
+    margin-left: calc(50% - 29rem) ;
+}
+#title > a > img {
+    width: 7rem;
 
+}
 #board{
     position: relative;
     width: 100%;
-    height: 70%;
+    height: 80%;
     padding: var(--input-padding);
     background-color: antiquewhite;
     border-radius: 1.5rem;
     box-shadow: 5px 5px 15px #666;
 }
 .table{
-    margin-top: 3rem;
-    width: 100%;
-    height: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem auto 0;
+    width: 90%;
+    height: 54.5rem;
     text-align: center;
     border: 1px solid #dedede;
 }
 ul{
     display: flex;
-    justify-content: space-around;
+    height: 5rem;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 0.1rem solid #ddd ;
 }
 .tableHeader {
-    line-height: 2rem;
+    align-content: center;
+    align-items: center;
     font-size: 2rem;
-    height: 3rem;
-    line-height: 3rem;
+    height: 5rem;
+    line-height: 2rem;
     background-color: rgb(95, 113, 113)
 }
-.tableHeader > span {
+.tableHeader > span{
     width: 20rem;
-
-}
-.tableHeader > ul:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 li{
-    height: 3rem;
+    display:inline-block;
     width: 20rem;
+    color: #333333;
     text-align: center;
     font-size: 1.7rem;
-    margin-bottom: 0.6rem;
+    padding: var(--input-padding);
+    /* margin-bottom: 0.6rem; */
 }
 
 #page{
@@ -89,13 +104,14 @@ li{
 
 #board > a{
     position:absolute;
-    right: 8rem; bottom: 4rem;
+    right: 12rem; bottom: 4em;
     background-color: rgb(241, 198, 176);
     width: 7rem;
-    height: 3.5rem;
+    height: 2rem;
     text-align: center;
-    line-height: 4rem;
-    font-size: 2rem;
+    line-height: 2rem;
+    font-size: 1.6rem;
     border-radius: 1.3rem;
+    color: var(--font-color);
     padding: var(--input-padding);
 }

@@ -18,7 +18,8 @@
 }
 #joinpage > h2 {
     margin: 2rem 0;
-    font-size: 3rem;
+    font-size: 4rem;
+    color: var(--main_fontcolor);
 }
 #items_wrap{
     display: flex;
@@ -72,10 +73,19 @@ form > #btn{
 } 
 span{
     display: block;
-    width: 9rem;
+    width: 100%;
     text-align: start;
     font-size: 1.5rem;
-    margin: 0.5rem 0.3rem 0.3rem 3rem;
+    margin: 0.5rem 0.3rem 0.3rem 1rem;
+}
+span > p {
+    font-size: 1rem;
+    width: 30rem;
+}
+#checking{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 input{
     width: 100%;
