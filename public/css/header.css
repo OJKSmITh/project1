@@ -108,6 +108,7 @@ a {
     transition: 1s;
     background-color: var(--content-box);
     box-shadow: -5px -5px 15px #666;
+    font-weight: 700;
 }
 
 #gnb>img {
@@ -115,28 +116,42 @@ a {
     margin: 0 auto;
 }
 
-#gnb>div>a:nth-child(1),
-a:nth-child(2) {
+#gnb>div>a:nth-child(1),a:nth-child(2) {
     display: inline-block;
     margin: 1rem;
+    width: 12rem;
+    height: 4rem;
     font-size: 2rem;
-    padding: 0.7rem 1.4rem;
+    padding: var(--input-padding);
     text-align: center;
-    border: 00.15rem solid #939393
+    font-weight: 500;
+    border-radius: 0.7rem;
+    background-color: var(--main_fontcolor);
+    color: var(--font-color) ;
+    border: 0.1rem solid var(--border-color);
 }
+
 
 #gnb>div>a:nth-child(3) {
     display: block;
     margin: 1rem;
+    height: 4rem;
     font-size: 2rem;
-    padding: 0.7rem 1.4rem;
     text-align: center;
-    border: 00.15rem solid #939393
+    font-weight: 500;
+    border-radius: 0.7rem;
+    padding: var(--input-padding);
+    background-color: var(--main_fontcolor);
+    color: var(--font-color) ;
+    border: 0.1rem solid var(--border-color);
 }
 
 .gnbtext {
-    margin: 3rem 0;
-    font-size: 3rem;
+    margin: 10rem 0 3rem 0;
+    font-size: 5rem;
+    line-height: 6rem;
+    text-align: end;
+
 }
 
 #profilePic>img {
