@@ -48,13 +48,9 @@ exports.logout = (req, res, next) => {
     res.redirect('/')
 }
 
-exports.idcheck = (req, res, next) => {
-    const { userId } = req.body
-    const [item] = service.fIdcheck(userId)
-    let result = 1
-    if (item != undefined) result = 0
-    const response = {
-        result
-    }
-    res.send(JSON.stringify(response))
+exports.idcheck = async (req, res, next) => {
+    const { userId } = req.query
+    const [result] = await service.fIdcheck(userId)
+    if (result !== undefined) return next(new Error("아이디가 중복 되었습니다."))
+    res.render("user/join.html", { userId })
 }

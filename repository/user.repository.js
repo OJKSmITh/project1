@@ -20,6 +20,6 @@ exports.findImage = async (token) => {
 }
 
 exports.findIdcheck = async (userId) => {
-    const [result] = await pool.query(`SELECT * FROM user where userId="${userId}`)
+    const [result] = await pool.query(`SELECT * FROM user where userId="${userId}"`)
     return result
 }
