@@ -49,8 +49,12 @@ exports.logout = (req, res, next) => {
 }
 
 exports.idcheck = async (req, res, next) => {
+
     const { userId } = req.query
     const [result] = await service.fIdcheck(userId)
-    if (result !== undefined) return next(new Error("아이디가 중복 되었습니다."))
-    res.render("user/join.html", { userId })
+    if (result !== undefined) {
+        next(new Error("아이디가 중복됩니다. "))
+    } else {
+        next(new Error("회원가입이 가능합니다."))
+    }
 }

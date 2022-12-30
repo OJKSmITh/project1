@@ -78,5 +78,6 @@ exports.findvalue = async (req, res, next) => {
 exports.tokenlist = async (req, res, next) => {
     const { token } = req.cookies
     const list = await service.fList(token)
-    res.render("board/list.html", { list })
+    const result = await
+        res.render("board/list.html", { list })
 }
