@@ -49,9 +49,18 @@
 }
 form{
     position: absolute;
-    top : 30rem
+    top : 40rem
 }
-
+#pwCheck {
+    width: 12rem;
+    padding: 0.5rem 1rem;
+    height: 3rem;
+    margin: 0;
+    border-radius: 1rem;
+}
+#firstDiv{
+    height: 9rem;
+}
 form > div {
     width: 35rem;
     height: 8rem;
@@ -112,7 +121,7 @@ input{
     
 }
 #btn{
-    padding-top: 4rem;
+    padding-top: 2rem;
     justify-content: center;
     border: none;
 }
@@ -133,4 +142,7 @@ button {
 .itemAdd2{
     /* display: block; */
     opacity: 0.4;
+}
+#upload > input {
+    margin-top: 2rem;
 }

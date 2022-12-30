@@ -58,7 +58,7 @@ ul, li{
     height: 80%;
     padding: var(--input-padding);
     background-color: antiquewhite;
-    border-radius: 1.5rem;
+    border-radius: 0.7rem;
     box-shadow: 5px 5px 15px #666;
 }
 .table{
@@ -67,6 +67,7 @@ ul, li{
     margin: 3rem auto 0;
     width: 90%;
     height: 54.5rem;
+    border-radius: 0.7rem;
     text-align: center;
     border: 1px solid #dadada;
 }
@@ -83,6 +84,7 @@ ul{
     align-items: center;
     font-size: 2rem;
     height: 5rem;
+    border-radius: 0.7rem;
     line-height: 2rem;
     color: var(--main_fontcolor);
     background-color: rgb(95, 113, 113);
@@ -94,14 +96,30 @@ ul{
     width: 20rem;
     padding: var(--input-padding);
 }
-.tableHeader > span:nth-child(6){
+.table > ul > li > button > a {
+    background-color:rgb(241, 198, 176);
+    width: 7rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.6rem;
+    border-radius: 1.3rem;
+    color: var(--font-color);
+    padding: var(--input-padding);
+    border: 0.1rem solid var(--font-color);
+} 
+
+.table > ul > li > button{
+    border: none;
+}
+
+#filtericon {
     position: absolute;
     right: 0;
     display: flex;
     justify-content: space-between;
     width: 4rem;
     height: 2rem;
-
 }
 .tableHeader > span > a > img{
     width: 1.5rem;

@@ -4,7 +4,12 @@ const bg1 = document.querySelector("#bg1")
 const bg2 = document.querySelector("#bg2")
 const bg_wrap = document.querySelector("#container_wrap")
 const playBtn = document.querySelector("#playBtn")
-
+const closeBtn = document.querySelector("#close")
+const picBtn = document.querySelector("#profilePic")
+const popup = document.querySelector("#popup_wrap")
+const img = document.querySelector("#popup")
+const dp1 = document.querySelector("#view_wrap")
+const dp2 = document.querySelector("#popheader")
 
 const gnbBtnHandler = (e) => {
     gnb.classList.toggle('gnbon')
@@ -22,7 +27,7 @@ bg_wrap.addEventListener('scroll', function () {    //스크롤시 이벤트가 
     if(bg_wrap.scrollTop < value2 * 1.78 ){
         bg_wrap.style.background = "url(/img/jang_bg.jpeg) no-repeat 50% 50%"
     }      
-    if(bg_wrap.scrollTop > value2 * 1.78){
+    if(bg_wrap.scrollTop > value2 * 1.68){
         bg_wrap.style.background = "url(/img/jang_bg.jpeg) no-repeat 50% 50% "
     }
     if(bg_wrap.scrollTop > value2 * 1.78 * 2){
@@ -39,3 +44,17 @@ playBtn.addEventListener("click", ()=>{
     const play = new Audio("/img/everland.mp3")
     play.play()
 },{once : true})
+
+closeBtn.addEventListener ("click", (e)=>{
+    popup.classList.toggle("popOff")
+    img.classList.toggle("none")
+    dp1.classList.toggle("none")
+    dp2.classList.toggle("none")
+
+})
+picBtn.addEventListener("click",()=>{
+    popup.classList.toggle("popOff")
+    img.classList.toggle("none")
+    dp1.classList.toggle("none")
+    dp2.classList.toggle("none")
+})

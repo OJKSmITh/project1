@@ -50,17 +50,19 @@ for(let i = 0; i<10; i++){
 
     const inputHandler = (e) => {
         const target = e.target
+        console.log(target)
         if (target.value !== "" || target.value !== undefined) {
             formItem[i + 1].classList = "itemAdd"
-            if (i - 1 >= 0) {
-                formItem[i - 1].classList = "itemAdd2"
+            if(i ===8)formItem[i + 2].classList = "itemAdd"
+            if (i - 1 >= 0 ) {
+                formItem[i-1].classList = "itemAdd2"
             }
         } else {
             formItem[i + 1].classList = "itemNone"
         }
     }
     const clickHandler = (e) => {
-        items.scrollTop += 95
+        items.scrollTop += 105
     }
     formItem[i].addEventListener("input", inputHandler)
     formItem[i].addEventListener("input", clickHandler,{once : true})
