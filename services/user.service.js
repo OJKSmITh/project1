@@ -19,10 +19,12 @@ exports.fToken = async (token) => {
 
 exports.fImage = async (token) => {
     const result = await user.findImage(token)
-
     return result
 }
 
-
+exports.fIdcheck = async (userId) => {
+    const result = await user.findIdcheck(userId)
+    return result
+}
 
 

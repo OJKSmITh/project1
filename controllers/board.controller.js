@@ -3,7 +3,8 @@ const service = require("../services/board.service")
 exports.list = async (req, res, next) => {
     const acc = req.cookies
     if (Object.keys(acc).length === 0) return next(new Error("로그인을 해주세요!"))
-    const list = await service.getList()
+    const { page } = req.query
+    const list = await service.fPaging(page)
     res.render('board/list.html', { list })
 }
 
@@ -56,9 +57,26 @@ exports.findArrange = async (req, res, next) => {
     const { index } = req.query
     if (index === "hitup") {
         const findHitUp = await service.fHitUp()
-        res.render("board/view1.html", { findHitUp })
+        res.render("board/view1.html", { findHitUp, index })
     } else {
         const findHitDown = await service.fHitDown()
-        res.render("board/view1.html", { findHitDown })
+        res.render("board/view1.html", { findHitDown, index })
     }
+}
+
+exports.findvalue = async (req, res, next) => {
+    const { column, findValue } = req.body
+    if (column === "제목") {
+        const result = await service.lastSubjectValue(findValue)
+        res.render("board/view1.html", { result, column })
+    } else {
+        const result2 = await service.lastWriValue(findValue)
+        res.render("board/view1.html", { result2, column })
+    }
+}
+
+exports.tokenlist = async (req, res, next) => {
+    const { token } = req.cookies
+    const list = await service.fList(token)
+    res.render("board/list.html", { list })
 }

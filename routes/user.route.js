@@ -37,6 +37,8 @@ router.get('/logout', controller.logout)
 
 //========================================== profile
 
+router.post('/idcheck', controller.idcheck)
+
 
 
 module.exports = router

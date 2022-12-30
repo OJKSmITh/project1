@@ -14,7 +14,7 @@
     <div id="boardList_wrap">
         <div id="boardList">
             <div id="title">
-                <a href="/user/main2"><img src="/img/logo2.png" ></a>
+                <a href="/user/main2"><img src="/img/logo2.png"></a>
                 <span>환장의 나라 커뮤니티</span>
             </div>
             <div id="board">
@@ -27,14 +27,14 @@
                         <span>조회수</span>
                         <span>
                             <a href="/board/view1?index=hitup">
-                                <img src="/img/up.png" >
+                                <img src="/img/up.png">
                             </a>
                             <a href="/board/view1?index=hitdown">
-                                <img src="/img/down.png" >
+                                <img src="/img/down.png">
                             </a>
                         </span>
                     </ul>
-                    {% for item in list%}
+                    {% for item in list %}
                     <ul>
                         <li>{{loop.index}}</li>
                         <li><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></li>
@@ -44,17 +44,21 @@
                     </ul>
                     {% endfor %}
                 </div>
+                <form method="post" action="/board/view1">
+                    <select name="column">
+                        <option>제목</option>
+                        <option>작성자</option>
+                    </select>
+                    <input type="text" name="findValue">
+                    <button type="submit">검색</button>
+                </form>
+
                 <div id="page">
-                    <span><a>1</a></span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>3</span>
-                    <span>5</span>
-                    <span>6</span>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                    <span>10</span>
+                    <span><a href="/board/list?page=1">1</a></span>
+                    <span><a href="/board/list?page=2">2</a></span>
+                    <span><a href="/board/list?page=3">3</a></span>
+                    <span><a href="/board/list?page=4">4</a></span>
+                    <span><a href="/board/list?page=5">5</a></span>
                 </div>
                 <a href="/board/write">글쓰기</a>
             </div>

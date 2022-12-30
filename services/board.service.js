@@ -55,12 +55,28 @@ exports.fId = async (userId) => {
     return result
 }
 
-exports.fRegister = async (register) => {
-    const result = await board.findRegisterDate(register)
-    return result
-}
-
 exports.fLevel = async (token) => {
     const result = await board.findLevel(token)
     return result
 }
+
+exports.lastSubjectValue = async (subject) => {
+    const result = await board.findSubValue(subject)
+    return result
+}
+
+exports.lastWriValue = async (writer) => {
+    const result = await board.findWriValue(writer)
+    return result
+}
+
+exports.fList = async (token) => {
+    const result = await board.findList(token)
+    return result
+}
+
+exports.fPaging = async (page) => {
+    const result = await board.paging(page)
+    return result
+}
+
