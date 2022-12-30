@@ -2,6 +2,7 @@ const service = require("../services/admin.service")
 
 exports.view = (req, res, next) => {
     const { token } = req.cookies
+    if (token !== "admin") return next(new Error("관리자가 아니면 접근이 불가능합니다."))
     res.render("admin/main.html", { token })
 }
 
