@@ -14,8 +14,9 @@
     <div id="boardList_wrap">
         <div id="boardList">
             <div id="title">
-                <a href="/user/main2"><img src="/img/logo2.png"></a>
-                <span>환장의 나라 커뮤니티</span>
+
+                <a href="/user/main2"><img src="/img/logo2.png" ></a>
+                <span><a href="/board/list">환장의 나라 커뮤니티</a></span>
             </div>
             <div id="board">
                 <div class="table">
@@ -24,7 +25,7 @@
                         <span>제목</span>
                         <span>작성자</span>
                         <span>작성일</span>
-                        <span>조회수</span>
+                        <span><a href="/board/list">조회수</a></span>
                         <span>
                             <a href="/board/view1?index=hitup">
                                 <img src="/img/up.png">
@@ -54,13 +55,24 @@
                 </form>
 
                 <div id="page">
-                    <span><a href="/board/list?page=1">1</a></span>
-                    <span><a href="/board/list?page=2">2</a></span>
-                    <span><a href="/board/list?page=3">3</a></span>
-                    <span><a href="/board/list?page=4">4</a></span>
-                    <span><a href="/board/list?page=5">5</a></span>
+
+                    <form method="post" action="/board/view1" id="search">
+                        <select name="column">
+                            <option>제목</option>
+                            <option>작성자</option>
+                        </select>
+                        <input type="text" name="findValue">
+                        <button type="submit"></button>
+                    </form>
+                    <div>
+                        <span><a href="/board/list?page=1">1</a></span>
+                        <span><a href="/board/list?page=2">2</a></span>
+                        <span><a href="/board/list?page=3">3</a></span>
+                        <span><a href="/board/list?page=4">4</a></span>
+                        <span><a href="/board/list?page=5">5</a></span>
+                    </div>
+                    <a href="/board/write">글쓰기</a>
                 </div>
-                <a href="/board/write">글쓰기</a>
             </div>
         </div>
     </div>

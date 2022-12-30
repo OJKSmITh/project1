@@ -1,10 +1,11 @@
 :root{
-    --background-color:rgb(61, 79, 79);
-    --content-box:antiquewhite;
+    --background-color:#3d4f4f;
+    --content-box:#faebd7;
     --main_fontcolor:#f1c6b0;
     --input-padding:0.7rem 1.4rem;
     --font-color : #70645d;
     --border-color : #ddd;
+    --button-color : rgb(241, 198, 176);
 
 }
 html {

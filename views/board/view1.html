@@ -24,10 +24,15 @@
                         <span>제목</span>
                         <span>작성자</span>
                         <span>작성일</span>
-                        <span>조회수
+                        <span>조회수</span>
+                        <span>
+                            <a href="/board/view1?index=hitup">
+                                <img src="/img/up.png" >
+                            </a>
+                            <a href="/board/view1?index=hitdown">
+                                <img src="/img/down.png" >
+                            </a>
                         </span>
-                        <a href="/board/view1?index=hitup"></a>
-                        <a href="/board/view1?index=hitdown"></a>
                     </ul>
                     {% if index === "hitup" %}
                     {% for item in findHitUp %}

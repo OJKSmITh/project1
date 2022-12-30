@@ -28,14 +28,17 @@ a {
     /* position: absolute; */
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 3rem 1rem 0;
+    padding: 1rem 5rem 1rem 0;
     height: 9vh;
+    background-image: url(/img/header2.png);
+    background-position: 50% 50%;
 }
 
 .header>h1 {
     margin: 0;
     padding: 0;
 }
+
 
 .hamburger_btn {
     cursor: pointer;
@@ -71,10 +74,10 @@ a {
 .hamburger {
     display: block;
     margin: 0.3rem 0; 
-    width: 2rem;
-    height: 0.25rem;
+    width: 4rem;
+    height: 0.7rem;
     border-radius: 0.125rem;
-    background-color: #453a33;
+    background-color: #b40f0f;
 }
 
 
@@ -106,7 +109,7 @@ a {
     height: 91vh;
     opacity: 1;
     transition: 1s;
-    background-color: var(--content-box);
+    background-color: #faebd7;
     box-shadow: -5px -5px 15px #666;
     font-weight: 700;
 }
@@ -132,7 +135,7 @@ a {
 }
 
 
-#gnb>div>a:nth-child(3) {
+#gnb>div>a:nth-child(3), a:nth-child(4) {
     display: block;
     margin: 1rem;
     height: 4rem;
@@ -263,7 +266,7 @@ a {
 #scroll1>h2>#scroll1_1 {
     position: sticky;
     top: 34vh;
-    margin: 0rem 15em 15rem 0;
+    margin: 0rem 15em 10rem 0;
     height: 40rem;
 }
 
@@ -318,8 +321,8 @@ a {
 
 #scroll2_1 {
     position: sticky;
-    top: 32vh;
-    margin: 0rem 15em 15rem 0;
+    top: 37vh;
+    margin: 0rem 15em 10rem 0;
     height: 40rem;
 }
 #scroll5{
