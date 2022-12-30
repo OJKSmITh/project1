@@ -54,17 +54,12 @@ exports.Delete = async (req, res, next) => {
 
 exports.findValue = async (req, res, next) => {
     const { index } = req.query
-
-    // console.log(writer, registerDate)
-    if (index === "hit") {
-        const findHit = await service.fHit()
-        res.render("board/view1.html", { findHit })
+    if (index === "hitup") {
+        const findHitUp = await service.fHitUp()
+        res.render("board/view1.html", { findHitUp })
+    } else {
+        const findHitDown = await service.fHitDown()
+        res.render("board/view1.html", { findHitDown })
     }
-    // } else if (index === "userId") {
-    //     const findUser = await service.fId(userId)
-    //     res.render("board/view1.html", { findUser })
-    // } else {
-    //     const findRegister = await service.fRegister(registerDate)
-    //     res.render("board/view1.html", { findRegister })
-    // }
+
 }

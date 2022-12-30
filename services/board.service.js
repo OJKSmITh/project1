@@ -40,8 +40,13 @@ exports.lastValue = async () => {
     return result
 }
 
-exports.fHit = async () => {
-    const result = await board.findHit()
+exports.fHitUp = async () => {
+    const result = await board.findHitUp()
+    return result
+}
+
+exports.fHitDown = async () => {
+    const result = await board.findHitDown()
     return result
 }
 
