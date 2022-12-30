@@ -40,8 +40,13 @@ exports.lastValue = async () => {
     return result
 }
 
-exports.fHit = async () => {
-    const result = await board.findHit()
+exports.fHitUp = async () => {
+    const result = await board.findHitUp()
+    return result
+}
+
+exports.fHitDown = async () => {
+    const result = await board.findHitDown()
     return result
 }
 
@@ -52,5 +57,10 @@ exports.fId = async (userId) => {
 
 exports.fRegister = async (register) => {
     const result = await board.findRegisterDate(register)
+    return result
+}
+
+exports.fLevel = async (token) => {
+    const result = await board.findLevel(token)
     return result
 }

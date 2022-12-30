@@ -28,8 +28,9 @@ exports.view = async (req, res, next) => {
     if (Object.keys(acc).length === 0) return next(new Error("로그인을 해주세요!"))
     const { subject, content, writer, registerDate, idx } = await service.getView(req.query.idx)
     const { token } = req.cookies
+    const { level } = await service.fLevel(token)
     const plus = await service.hPlus(req.query.idx)
-    res.render('board/view.html', { subject, content, writer, registerDate, idx, token })
+    res.render('board/view.html', { subject, content, writer, registerDate, idx, token, level })
 }
 
 exports.getModify = async (req, res, next) => {
@@ -40,8 +41,8 @@ exports.getModify = async (req, res, next) => {
 }
 
 exports.postModify = async (req, res, next) => {
-
     const { idx, subject, content, writer } = req.body
+    if (subject === "" && content === "") return next(new Error("값을 넣어주세요"))
     const modify = await service.pModify(idx, subject, content, writer)
     res.redirect(`/board/view?idx=${req.query.idx}`)
 }
@@ -51,19 +52,13 @@ exports.Delete = async (req, res, next) => {
     res.redirect('/board/list')
 }
 
-exports.findValue = async (req, res, next) => {
+exports.findArrange = async (req, res, next) => {
     const { index } = req.query
-
-    // console.log(writer, registerDate)
-    if (index === "hit") {
-        const findHit = await service.fHit()
-        res.render("board/view1.html", { findHit })
+    if (index === "hitup") {
+        const findHitUp = await service.fHitUp()
+        res.render("board/view1.html", { findHitUp })
+    } else {
+        const findHitDown = await service.fHitDown()
+        res.render("board/view1.html", { findHitDown })
     }
-    // } else if (index === "userId") {
-    //     const findUser = await service.fId(userId)
-    //     res.render("board/view1.html", { findUser })
-    // } else {
-    //     const findRegister = await service.fRegister(registerDate)
-    //     res.render("board/view1.html", { findRegister })
-    // }
 }

@@ -40,8 +40,13 @@ exports.findLast = async () => {
     return result
 }
 
-exports.findHit = async () => {
+exports.findHitUp = async () => {
     const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board ORDER BY hit DESC`)
+    return result
+}
+
+exports.findHitDown = async () => {
+    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board ORDER BY hit ASC`)
     return result
 }
 
@@ -54,3 +59,9 @@ exports.findRegisterDate = async (register) => {
     const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where registerDate="${register}"`)
     return result
 }
+
+exports.findLevel = async (token) => {
+    const [[result]] = await pool.query(`SELECT level from user where userId="${token}"`)
+    return result
+}
+

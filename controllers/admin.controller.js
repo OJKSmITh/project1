@@ -2,11 +2,14 @@ const service = require("../services/admin.service")
 
 exports.view = (req, res, next) => {
     const { token } = req.cookies
+    if (token !== "admin") return next(new Error("관리자가 아니면 접근이 불가능합니다."))
     res.render("admin/main.html", { token })
 }
 
 exports.getList = async (req, res, next) => {
     const result = await service.getList()
+    const { token } = req.cookies
+    if (token !== "admin") return next(new Error("관리자가 아니면 접근이 불가능합니다."))
     res.render("admin/list.html", { result })
 }
 
@@ -20,11 +23,13 @@ exports.getView = async (req, res, next) => {
     const { token } = req.cookies
     const { idx } = req.query
     const { subject, content, writer, registerDate } = await service.getView(idx)
+    if (token !== "admin") return next(new Error("관리자가 아니면 접근이 불가능합니다."))
     res.render("admin/view.html", { subject, content, writer, registerDate, token, idx })
 }
 
 exports.getWrite = async (req, res, next) => {
     const { token } = req.cookies
+    if (token !== "admin") return next(new Error("관리자가 아니면 접근이 불가능합니다."))
     res.render("admin/write.html", { token })
 }
 
@@ -37,6 +42,8 @@ exports.postWrite = async (req, res, next) => {
 }
 
 exports.getModify = async (req, res, next) => {
+    const { token } = req.cookies
+    if (token !== "admin") return next(new Error("관리자가 아니면 접근이 불가능합니다."))
     const { idx, subject, writer, content, registerDate } = await service.getView(req.query.idx)
     res.render('admin/modify.html', { idx, subject, writer, content, registerDate })
 }
@@ -49,6 +56,7 @@ exports.postModify = async (req, res, next) => {
 
 exports.manageView = async (req, res, next) => {
     const { token } = req.cookies
+    if (token !== "admin") return next(new Error("관리자가 아니면 접근이 불가능합니다."))
     const list = await service.fUser()
     res.render('admin/manage.html', { list, token })
 }
