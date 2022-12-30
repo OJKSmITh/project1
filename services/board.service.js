@@ -69,3 +69,8 @@ exports.lastWriValue = async (writer) => {
     const result = await board.findWriValue(writer)
     return result
 }
+
+exports.fList = async (token) => {
+    const result = await board.findList(token)
+    return result
+}

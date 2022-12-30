@@ -73,3 +73,9 @@ exports.findvalue = async (req, res, next) => {
         res.render("board/view1.html", { result2, column })
     }
 }
+
+exports.tokenlist = async (req, res, next) => {
+    const { token } = req.cookies
+    const list = await service.fList(token)
+    res.render("board/list.html", { list })
+}
