@@ -24,7 +24,7 @@
 #items_wrap{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     width: 50rem;
     height: 63vh;
     border-radius: 1.5rem;
@@ -34,6 +34,7 @@
 }
 #items{
     display: flex;
+    position: relative;
     height: 58rem;
     width: 42rem;
     padding: 1rem;
@@ -45,6 +46,10 @@
 #items::-webkit-scrollbar { 
     display: none ;
     width: 0 ;
+}
+form{
+    position: absolute;
+    top : 30rem
 }
 
 form > div {
@@ -118,11 +123,11 @@ button {
     border-radius: 1.5rem;
 }
 .itemNone{
-    display: none;
+    /* display: none; */
     opacity: 0;
 }
 .itemAdd{
-    display: block;
+    /* display: block; */
     opacity: 1;
 }
 .itemAdd2{
