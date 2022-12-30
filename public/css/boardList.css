@@ -72,16 +72,34 @@ ul{
     border-bottom: 0.1rem solid #ddd ;
 }
 .tableHeader {
+    position: relative;
     align-content: center;
     align-items: center;
     font-size: 2rem;
     height: 5rem;
     line-height: 2rem;
+    color: var(--main_fontcolor);
     background-color: rgb(95, 113, 113)
 }
 .tableHeader > span{
     width: 20rem;
+    padding: var(--input-padding);
 }
+.tableHeader > span:nth-child(6){
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 4rem;
+    height: 2rem;
+
+}
+.tableHeader > span > a > img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
 li{
     display:inline-block;
     width: 20rem;
