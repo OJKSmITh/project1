@@ -40,6 +40,9 @@
                     </ul>
                     {% endfor %}
                     {% else %}
+                    {% endif %}
+
+                    {% if index === "hitdown" %}
                     {% for item in findHitDown %}
                     <ul>
                         <li>{{loop.index}}</li>
@@ -49,6 +52,33 @@
                         <li>{{item.hit}}</li>
                     </ul>
                     {% endfor %}
+                    {% else %}
+                    {% endif %}
+
+                    {% if column === "제목" %}
+                    {% for item in result %}
+                    <ul>
+                        <li>{{loop.index}}</li>
+                        <li><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></li>
+                        <li>{{item.writer}}</li>
+                        <li>{{item.registerDate}}</li>
+                        <li>{{item.hit}}</li>
+                    </ul>
+                    {% endfor %}
+                    {% else %}
+                    {% endif %}
+
+                    {% if column === "작성자" %}
+                    {% for item in result2 %}
+                    <ul>
+                        <li>{{loop.index}}</li>
+                        <li><a href="/board/view?idx={{item.idx}}">{{item.subject}}</a></li>
+                        <li>{{item.writer}}</li>
+                        <li>{{item.registerDate}}</li>
+                        <li>{{item.hit}}</li>
+                    </ul>
+                    {% endfor %}
+                    {% else %}
                     {% endif %}
                 </div>
                 <div id="page">

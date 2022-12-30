@@ -44,7 +44,14 @@
                     </ul>
                     {% endfor %}
                 </div>
-                <form action=""></form>
+                <form method="post" action="/board/view1">
+                    <select name="column">
+                        <option>제목</option>
+                        <option>작성자</option>
+                    </select>
+                    <input type="text" name="findValue">
+                    <button type="submit">검색</button>
+                </form>
 
                 <div id="page">
                     <span><a>1</a></span>

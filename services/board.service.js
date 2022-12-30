@@ -55,12 +55,17 @@ exports.fId = async (userId) => {
     return result
 }
 
-exports.fRegister = async (register) => {
-    const result = await board.findRegisterDate(register)
+exports.fLevel = async (token) => {
+    const result = await board.findLevel(token)
     return result
 }
 
-exports.fLevel = async (token) => {
-    const result = await board.findLevel(token)
+exports.lastSubjectValue = async (subject) => {
+    const result = await board.findSubValue(subject)
+    return result
+}
+
+exports.lastWriValue = async (writer) => {
+    const result = await board.findWriValue(writer)
     return result
 }

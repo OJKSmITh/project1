@@ -62,3 +62,14 @@ exports.findArrange = async (req, res, next) => {
         res.render("board/view1.html", { findHitDown, index })
     }
 }
+
+exports.findvalue = async (req, res, next) => {
+    const { column, findValue } = req.body
+    if (column === "제목") {
+        const result = await service.lastSubjectValue(findValue)
+        res.render("board/view1.html", { result, column })
+    } else {
+        const result2 = await service.lastWriValue(findValue)
+        res.render("board/view1.html", { result2, column })
+    }
+}

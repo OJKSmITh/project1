@@ -50,15 +50,21 @@ exports.findHitDown = async () => {
     return result
 }
 
-exports.findUserId = async (userId) => {
-    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where userId="${userId}"`)
+exports.findSubValue = async (subject) => {
+    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where subject="${subject}";`)
     return result
 }
 
-exports.findRegisterDate = async (register) => {
-    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where registerDate="${register}"`)
+exports.findWriValue = async (writer) => {
+    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where writer="${writer}";`)
     return result
 }
+
+exports.findWriter = async (writer) => {
+    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where writer="${writer}}"`)
+    return result
+}
+
 
 exports.findLevel = async (token) => {
     const [[result]] = await pool.query(`SELECT level from user where userId="${token}"`)

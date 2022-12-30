@@ -4,6 +4,8 @@ const controller = require('../controllers/board.controller')
 
 router.get('/list', controller.list)
 
+router.post('/view1', controller.findvalue)
+
 router.get('/write', controller.getWrite)
 
 router.post('/write', controller.postWrite)
