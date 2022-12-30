@@ -52,7 +52,7 @@ exports.Delete = async (req, res, next) => {
     res.redirect('/board/list')
 }
 
-exports.findValue = async (req, res, next) => {
+exports.findArrange = async (req, res, next) => {
     const { index } = req.query
     if (index === "hitup") {
         const findHitUp = await service.fHitUp()
@@ -61,5 +61,4 @@ exports.findValue = async (req, res, next) => {
         const findHitDown = await service.fHitDown()
         res.render("board/view1.html", { findHitDown })
     }
-
 }

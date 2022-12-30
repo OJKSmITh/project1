@@ -10,7 +10,7 @@ router.post('/write', controller.postWrite)
 
 router.get('/view', controller.view)
 
-router.get('/view1', controller.findValue)
+router.get('/view1', controller.findArrange)
 
 router.get('/modify', controller.getModify)
 
