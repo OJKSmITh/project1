@@ -54,3 +54,8 @@ exports.fRegister = async (register) => {
     const result = await board.findRegisterDate(register)
     return result
 }
+
+exports.fLevel = async (token) => {
+    const result = await board.findLevel(token)
+    return result
+}

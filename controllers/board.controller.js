@@ -28,8 +28,9 @@ exports.view = async (req, res, next) => {
     if (Object.keys(acc).length === 0) return next(new Error("로그인을 해주세요!"))
     const { subject, content, writer, registerDate, idx } = await service.getView(req.query.idx)
     const { token } = req.cookies
+    const { level } = await service.fLevel(token)
     const plus = await service.hPlus(req.query.idx)
-    res.render('board/view.html', { subject, content, writer, registerDate, idx, token })
+    res.render('board/view.html', { subject, content, writer, registerDate, idx, token, level })
 }
 
 exports.getModify = async (req, res, next) => {
