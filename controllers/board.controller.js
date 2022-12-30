@@ -41,8 +41,8 @@ exports.getModify = async (req, res, next) => {
 }
 
 exports.postModify = async (req, res, next) => {
-
     const { idx, subject, content, writer } = req.body
+    if (subject === "" && content === "") return next(new Error("값을 넣어주세요"))
     const modify = await service.pModify(idx, subject, content, writer)
     res.redirect(`/board/view?idx=${req.query.idx}`)
 }
