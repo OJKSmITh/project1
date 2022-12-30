@@ -31,13 +31,14 @@ router.get('/join', controller.getInsert)
 
 router.post('/welcome', upload.single('upload'), controller.postInsert)
 
+router.get('/join2', controller.idcheck)
 
 //============================================ logout
 router.get('/logout', controller.logout)
 
 //========================================== profile
 
-router.post('/idcheck', controller.idcheck)
+
 
 
 
