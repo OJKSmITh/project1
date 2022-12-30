@@ -60,26 +60,20 @@ for(let i = 0; i<10; i++){
         }
     }
     const clickHandler = (e) => {
-        items.scrollTop = items.scrollHeight;
-        // console.dir(e.target.scrollHeight)
-        // console.dir(e.target.scrollTop)
-
-
+        items.scrollTop += 95
     }
     formItem[i].addEventListener("input", inputHandler)
-    // formItem[i].addEventListener("click", inputHandler)
-    formItem[i].addEventListener("click", clickHandler)
+    formItem[i].addEventListener("input", clickHandler,{once : true})
+}
+
+function valueHandler (e){
+    e.preventDefault()
+    if (userId.value === "" ){
+        userId.focus()
+        userId.scrollIntoView(true)
+    }
 
 }
 
-// function valueHandler (e){
-//     e.preventDefault()
-//     if (userId.value === undefined ){
-//         userId.focus()
-//         userId.scrollIntoView(true)
-//     }
-
-// }
-
-// form.addEventListener("submit", valueHandler )
+form.addEventListener("submit", valueHandler )
 
