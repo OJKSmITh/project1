@@ -25,48 +25,49 @@ const userName = document.querySelector("#userName")
 // password.addEventListener("", keyHandler)
 // passwordCheck.addEventListener("keypress", keyHandler2)
 
-function checkPw(){
+function checkPw() {
     console.log(password.value)
-    if(password.value !== passwordCheck.value){
+    if (password.value !== passwordCheck.value) {
         passwordCheck.focus()
-        pwFalse.style.display="block"
-        pwTrue.style.display="none"
+        pwFalse.style.display = "block"
+        pwTrue.style.display = "none"
     }
-    if(password.value === passwordCheck.value){
-        pwTrue.style.display="block"
-        pwFalse.style.display="none"
+    if (password.value === passwordCheck.value) {
+        pwTrue.style.display = "block"
+        pwFalse.style.display = "none"
         // history.back()
     }
-    
+
 }
 
 passwordCheck.addEventListener("blur", checkPw)
 
-for(let i = 0; i<10; i++){
-    formItem[0].classList ="itemAdd"
-    formItem[i+1].classList ="itemNone"
+for (let i = 0; i < 10; i++) {
+    formItem[0].classList = "itemAdd"
+    formItem[i + 2].classList = "itemNone"
 
-    const inputHandler = (e) =>{
+    const inputHandler = (e) => {
         const target = e.target
-        if(target.value !== "" || target.value !== undefined ){
-            formItem[i+1].classList="itemAdd"
-            if(i-1 >= 0){
-                formItem[i-1].classList="itemAdd2"
+        if (target.value !== "" || target.value !== undefined) {
+            formItem[i + 1].classList = "itemAdd"
+            if (i - 1 >= 0) {
+                formItem[i - 1].classList = "itemAdd2"
             }
-        }else{
-            formItem[i+1].classList ="itemNone"
+        } else {
+            formItem[i + 1].classList = "itemNone"
         }
     }
-    const clickHandler =(e) =>{
+    const clickHandler = (e) => {
         items.scrollTop = items.scrollHeight;
         // console.dir(e.target.scrollHeight)
         // console.dir(e.target.scrollTop)
-        
+
 
     }
     formItem[i].addEventListener("input", inputHandler)
+    // formItem[i].addEventListener("click", inputHandler)
     formItem[i].addEventListener("click", clickHandler)
-    
+
 }
 
 // function valueHandler (e){
