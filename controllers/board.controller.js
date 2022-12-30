@@ -56,9 +56,9 @@ exports.findArrange = async (req, res, next) => {
     const { index } = req.query
     if (index === "hitup") {
         const findHitUp = await service.fHitUp()
-        res.render("board/view1.html", { findHitUp })
+        res.render("board/view1.html", { findHitUp, index })
     } else {
         const findHitDown = await service.fHitDown()
-        res.render("board/view1.html", { findHitDown })
+        res.render("board/view1.html", { findHitDown, index })
     }
 }
