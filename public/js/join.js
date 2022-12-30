@@ -44,7 +44,7 @@ passwordCheck.addEventListener("blur", checkPw)
 
 for(let i = 0; i<10; i++){
     formItem[0].classList ="itemAdd"
-    formItem[i+1].classList ="itemNone"
+    formItem[i+2].classList ="itemNone"
 
     const inputHandler = (e) =>{
         const target = e.target
