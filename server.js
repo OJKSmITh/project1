@@ -36,7 +36,14 @@ app.use('/image', express.static('./uploads'))
 app.use(router)
 
 app.get('/', (req, res, next) => {
-    res.render("main.html")
+    const { token } = req.cookies
+    if (token === "admin") {
+        res.redirect("/admin/main")
+    } else if (token) {
+        res.redirect("/user/main2")
+    } else {
+        res.render("main.html")
+    }
 })
 
 app.use((error, req, res, next) => {

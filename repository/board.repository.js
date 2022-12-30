@@ -72,7 +72,7 @@ exports.findLevel = async (token) => {
 }
 
 exports.findList = async (token) => {
-    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where writer="${token}";`)
+    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where writer="${token}" limit 0,10;`)
     return result
 }
 

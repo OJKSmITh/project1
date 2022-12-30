@@ -33,7 +33,13 @@
                         <li>{{item.level}}</li>
                         {% if item.level === 0 %}
                         <li><button><a href="/admin/approve?userId={{item.userId}}">승인</a></button></li>
+                        <li><button style="border: none;"><a href="/admin/approve?userId={{item.userId}}"
+                                    style="display: none;">진급</a></button></li>
+                        <li><button style="border: none;"><a href="/admin/approve?userId={{item.userId}}"
+                                    style="display: none;">강등</a></button></li>
                         {% else %}
+                        <li><button style="border: none;"><a href="/admin/levelup?userId={{item.userId}}"
+                                    style="display: none;">승급</a></button></li>
                         <li><button><a href="/admin/levelup?userId={{item.userId}}">진급</a></button></li>
                         <li><button><a href="/admin/leveldown?userId={{item.userId}}">강등</a></button></li>
                         {% endif %}
