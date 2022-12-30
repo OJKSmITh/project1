@@ -20,10 +20,11 @@ ul, li{
     height: 100vh;
     background-color: rgb(61, 79, 79);
 }
-#profile > img { 
+#profilePic > img { 
     position:absolute;
     z-index: 8;
     top:-6rem;
+    left: 24rem;
     width: 12rem;
     height: 12rem;
     border-radius: 6rem;

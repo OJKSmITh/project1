@@ -40,11 +40,17 @@ ul, li{
     width:46rem;
     font-size: 4.5rem;
     text-align: center;
-    margin-left: calc(50% - 29rem) ;
+    margin-left: calc(50% - 23rem) ;
+}
+#title > span > a{
+    font-size: 4.5rem;
+    text-align: center;
+    color: var(--main_fontcolor);
 }
 #title > a > img {
-    width: 7rem;
-
+    position: absolute;
+    width: 12rem;
+    left : 50rem; top: 3.5rem
 }
 #board{
     position: relative;
@@ -62,7 +68,7 @@ ul, li{
     width: 90%;
     height: 54.5rem;
     text-align: center;
-    border: 1px solid #dedede;
+    border: 1px solid #dadada;
 }
 ul{
     display: flex;
@@ -79,7 +85,10 @@ ul{
     height: 5rem;
     line-height: 2rem;
     color: var(--main_fontcolor);
-    background-color: rgb(95, 113, 113)
+    background-color: rgb(95, 113, 113);
+}
+.tableHeader > span > a{
+    color: var(--main_fontcolor);
 }
 .tableHeader > span{
     width: 20rem;
@@ -113,23 +122,68 @@ li{
 #page{
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 3rem;
+    padding : 0 10rem;
 }
-#page > span {
+#page > form {
+    position: absolute;
+    left: 12rem; bottom: 5em;
+
+}
+
+#page > div > span {
     margin: auto 1rem;
+    width: 1rem;
     font-size: 1.5rem;
 }
 
-#board > a{
+#page > a{
     position:absolute;
-    right: 12rem; bottom: 4em;
-    background-color: rgb(241, 198, 176);
+    right: 12rem; bottom: 5rem;
+    background-color:rgb(241, 198, 176);
     width: 7rem;
-    height: 2rem;
+    height: 2.7rem;
     text-align: center;
-    line-height: 2rem;
+    line-height: 2.7rem;
     font-size: 1.6rem;
     border-radius: 1.3rem;
     color: var(--font-color);
     padding: var(--input-padding);
+    border: 0.1rem solid var(--font-color);
+}
+#search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25rem ;
+    padding: var(--input-padding);
+    border: 0.1rem solid var(--font-color);
+    border-radius: 0.7rem;
+    background-color:rgb(241, 198, 176);
+
+
+}
+#search > select,input, button {
+    border: 0.1rem solid var(--font-color);
+    height: 2.5rem;
+}
+#search > select {
+    background-color: var(--content-box);
+    color: var(--font-color);
+}
+#search > input {
+    border-radius: 0.5rem;
+    background-color: var(--content-box);
+
+}
+#search > button {
+    width: 2.5rem;
+    border: none;
+    background-color: initial;
+    background-image: url(/img/search.png);
+    background-size: cover;
+}
+#search > button:hover{
+    background-image: url(/img/hover.png);
 }

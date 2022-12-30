@@ -3,6 +3,8 @@ const gnb = document.querySelector("#gnb")
 const bg1 = document.querySelector("#bg1")
 const bg2 = document.querySelector("#bg2")
 const bg_wrap = document.querySelector("#container_wrap")
+const playBtn = document.querySelector("#playBtn")
+
 
 const gnbBtnHandler = (e) => {
     gnb.classList.toggle('gnbon')
@@ -32,3 +34,8 @@ bg_wrap.addEventListener('scroll', function () {    //스크롤시 이벤트가 
 
 
 })
+
+playBtn.addEventListener("click", ()=>{
+    const play = new Audio("/img/everland.mp3")
+    play.play()
+},{once : true})
