@@ -10,6 +10,8 @@ const popup = document.querySelector("#popup_wrap")
 const img = document.querySelector("#popup")
 const dp1 = document.querySelector("#view_wrap")
 const dp2 = document.querySelector("#popheader")
+const welcome = document.querySelector("#welcome")
+
 
 const gnbBtnHandler = (e) => {
     gnb.classList.toggle('gnbon')
@@ -30,15 +32,25 @@ bg_wrap.addEventListener('scroll', function () {    //스크롤시 이벤트가 
     if(bg_wrap.scrollTop > value2 * 1.78 * 2){
         bg_wrap.style.background = "url(/img/jang_bg.jpeg) no-repeat 50% 50% "
     }
-    if(bg_wrap.scrollTop > value2 * 1.35 * 3){
+    if(bg_wrap.scrollTop > value2 * 1.35 * 4){
         bg_wrap.style.background = "url(/img/baek_bg.jpeg) no-repeat 50% 50% "
     }    
-    if(bg_wrap.scrollTop > value2 * 1.75 * 4){
+    if(bg_wrap.scrollTop > value2 * 1.75 * 5){
         bg_wrap.style.background = "url(/img/logo2.png) no-repeat 50% 50%"
     }
-
-
+    if(bg_wrap.scrollTop > 500) {
+        welcome.style.transform = "rotateX(-210dex)"
+        welcome.style.transform = "scale(1.3)"
+        welcome.style.transition = "all 0.5s"
+    }
+    if(bg_wrap.scrollTop > 1500) {
+        welcome.style.transform = "rotateX(0dex)"
+        welcome.style.transform = "scale(1)"
+        welcome.style.transition = "all 0.5s"
+    }
 })
+
+
 
 playBtn.addEventListener("click", ()=>{
     const play = new Audio("/img/everland.mp3")
