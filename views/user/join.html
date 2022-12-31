@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/join.css">
     <link rel="stylesheet" href="/css/root.css">
-    <link rel="icon" type="image/png" href="/img/ico.png"/>
+    <link rel="icon" type="image/png" href="/img/ico.png" />
 </head>
 
 <body>
@@ -20,13 +20,14 @@
             <h2>환장의 나라 합류하기</h2>
             <div id="items_wrap">
                 <div id="items">
-                    <form method="post" enctype="multipart/form-data">
+                    <form method="post" enctype="multipart/form-data" id="searchForm">
                         <input type="hidden" name="write" value="path">
-                        <div  id="firstDiv">
+                        <div id="firstDiv">
                             <span>아이디</span>
                             <div>
-                                <input type="text" name="userId" id="userId" class="check" value="{{userId}}">
-                                <button type="submit" formaction="/user/join2" formmethod="get" id="pwCheck">중복체크</button>
+                                <input type="text" name="userId" id="userId" value="{{userId}}" autofocus>
+                                <button type="submit" class="checkValue" formaction="/user/join2" formmethod="get"
+                                    id="pwCheck">중복체크</button>
                             </div>
                         </div>
                         <div>

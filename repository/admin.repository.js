@@ -51,3 +51,37 @@ exports.levelUp = async (userId) => {
     return result
 }
 
+exports.paging = async (page) => {
+    if (page === "1" || page === undefined) {
+        const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board limit 0, 10`)
+        return result
+    } else if (page === "2") {
+        const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board limit 10, 10`)
+        return result
+    } else if (page === "3") {
+        const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board limit 20, 10`)
+        return result
+    } else if (page === "4") {
+        const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board limit  30, 10`)
+        return result
+    } else if (page === "5") {
+        const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board limit  40, 10`)
+        return result
+    }
+}
+
+exports.userPaging = async (page) => {
+    if (page === "1" || page === undefined) {
+        page = 1
+        const [result] = await pool.query(`SELECT userId, level FROM user limit ${page}, 10`)
+        return result
+    } else {
+        const [result] = await pool.query(`SELECT userId, level FROM user limit ${(page - 1) * 10 + 1}, 10`)
+        return result
+    }
+}
+
+exports.arrayNum = async () => {
+    const [[result]] = await pool.query(`SELECT COUNT(*) FROM user`)
+    return result
+}

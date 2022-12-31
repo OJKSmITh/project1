@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 관리페이지</title>
     <link rel="stylesheet" href="/css/root.css">
-    <link rel="icon" type="image/png" href="/img/ico.png"/>
-    <link rel="stylesheet" href="/css/boardList.css">
+    <link rel="icon" type="image/png" href="/img/ico.png" />
+    <link rel="stylesheet" href="/css/adminList.css">
 </head>
 
 <body>
@@ -49,16 +49,9 @@
                     {% endfor %}
                 </div>
                 <div id="page">
-                    <span><a>1</a></span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>3</span>
-                    <span>5</span>
-                    <span>6</span>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                    <span>10</span>
+                    {% for alength in result %}
+                    <span><a href="/admin/manage?page={{loop.index}}">{{loop.index}}</a></span>
+                    {% endfor %}
                 </div>
             </div>
         </div>
