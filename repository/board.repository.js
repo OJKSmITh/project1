@@ -51,12 +51,12 @@ exports.findHitDown = async () => {
 }
 
 exports.findSubValue = async (subject) => {
-    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where subject="${subject}";`)
+    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where subject REGEXP "${subject}";`)
     return result
 }
 
 exports.findWriValue = async (writer) => {
-    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where writer="${writer}";`)
+    const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board where writer REGEXP "${writer}";`)
     return result
 }
 
