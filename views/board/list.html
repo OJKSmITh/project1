@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>커뮤니티</title>
     <link rel="stylesheet" href="/css/root.css">
+    <link rel="icon" type="image/png" href="/img/ico.png"/>
     <link rel="stylesheet" href="/css/boardList.css">
 </head>
 
@@ -26,7 +27,7 @@
                         <span>작성자</span>
                         <span>작성일</span>
                         <span><a href="/board/list">조회수</a></span>
-                        <span>
+                        <span id="filtericon">
                             <a href="/board/view1?index=hitup">
                                 <img src="/img/up.png">
                             </a>
@@ -45,17 +46,7 @@
                     </ul>
                     {% endfor %}
                 </div>
-                <!-- <form method="post" action="/board/view1">
-                    <select name="column">
-                        <option>제목</option>
-                        <option>작성자</option>
-                    </select>
-                    <input type="text" name="findValue">
-                    <button type="submit">검색</button>
-                </form> -->
-
                 <div id="page">
-
                     <form method="post" action="/board/view1" id="search">
                         <select name="column">
                             <option>제목</option>

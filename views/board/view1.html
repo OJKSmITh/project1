@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>커뮤니티</title>
+    <link rel="icon" type="image/png" href="/img/ico.png"/>
     <link rel="stylesheet" href="/css/root.css">
     <link rel="stylesheet" href="/css/boardList.css">
 </head>
@@ -87,18 +88,23 @@
                     {% endif %}
                 </div>
                 <div id="page">
-                    <span><a>1</a></span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>3</span>
-                    <span>5</span>
-                    <span>6</span>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                    <span>10</span>
+                    <form method="post" action="/board/view1" id="search">
+                        <select name="column">
+                            <option>제목</option>
+                            <option>작성자</option>
+                        </select>
+                        <input type="text" name="findValue">
+                        <button type="submit"></button>
+                    </form>
+                    <div>
+                        <span><a href="/board/list?page=1">1</a></span>
+                        <span><a href="/board/list?page=2">2</a></span>
+                        <span><a href="/board/list?page=3">3</a></span>
+                        <span><a href="/board/list?page=4">4</a></span>
+                        <span><a href="/board/list?page=5">5</a></span>
+                    </div>
+                    <a href="/board/write">글쓰기</a>
                 </div>
-                <a href="/board/write">글쓰기</a>
             </div>
         </div>
     </div>
