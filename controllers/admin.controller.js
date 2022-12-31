@@ -9,9 +9,10 @@ exports.view = async (req, res, next) => {
 }
 
 exports.getList = async (req, res, next) => {
-    const result = await service.getList()
     const { token } = req.cookies
     if (token !== "admin") return next(new Error("관리자가 아니면 접근이 불가능합니다."))
+    const { page } = req.query
+    const result = await service.fPaging(page)
     res.render("admin/list.html", { result })
 }
 
@@ -59,7 +60,8 @@ exports.postModify = async (req, res, next) => {
 exports.manageView = async (req, res, next) => {
     const { token } = req.cookies
     if (token !== "admin") return next(new Error("관리자가 아니면 접근이 불가능합니다."))
-    const list = await service.fUser()
+    const { page } = req.query
+    const list = await service.uPaging(page)
     res.render('admin/manage.html', { list, token })
 }
 

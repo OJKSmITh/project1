@@ -49,3 +49,13 @@ exports.lUp = async (userId) => {
     const result = await admin.levelUp(userId)
     return result
 }
+
+exports.fPaging = async (page) => {
+    const result = await admin.paging(page)
+    return result
+}
+
+exports.uPaging = async (page) => {
+    const result = await admin.userPaging(page)
+    return result
+}
