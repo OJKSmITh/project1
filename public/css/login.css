@@ -63,3 +63,20 @@ button {
     border: 0.1rem solid var(--border-color);
     height: 4rem;
 }
+#login > div {
+    width: 70%;
+}
+#login > div > a {
+    display: block;
+    margin: 0.7rem auto;
+    width: 62%;
+    background-color: rgb(241, 198, 176);
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1.3rem;
+    border-radius: 0.7rem;
+    padding: var(--input-padding);
+    color: var(--font-color);
+    border: 0.1rem solid var(--border-color);
+    height: 2.5rem;
+}

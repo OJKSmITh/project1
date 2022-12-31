@@ -58,3 +58,54 @@ picBtn.addEventListener("click",()=>{
     dp1.classList.toggle("none")
     dp2.classList.toggle("none")
 })
+
+
+
+
+const slideItems = document.querySelector("#slideItems")
+let slideindex = 1
+const prev = document.querySelector("#preBtn")
+const next = document.querySelector("#nextBtn")
+
+function slideshow (){
+    if(slideindex === 3) slideindex = 0
+    slideItems.style.left = -slideindex * 120 + 'rem' 
+    slideindex++
+}
+
+
+function prevHandler (){
+    clearInterval(intervalId)
+    slideindex--
+    if(slideindex === -1) {
+        slideindex = 2
+    }   
+    slideItems.style.left = -slideindex * 120 + 'rem' 
+    let intervalId = setInterval(slideshow, 1500)
+}
+
+function nextHandler(){
+    clearInterval(intervalId)
+    slideindex++
+    if(slideindex === 3) {
+        slideindex = 0
+    }   
+    slideItems.style.left = -slideindex * 120 + 'rem' 
+    let intervalId = setInterval(slideshow, 1500)
+
+}
+prev.addEventListener('click', prevHandler);
+next.addEventListener('click', nextHandler);
+
+let intervalId = setInterval(slideshow, 1500)
+
+// next.addEventListener('click',  ()=> {
+//     clearInterval()
+//     console.log(slideindex)
+//     if (slideindex !== 1){
+//         slideindex += 1
+//     }else{
+//         slideindex = -1
+//     }
+//     slideshow
+// });
