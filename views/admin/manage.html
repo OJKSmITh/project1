@@ -49,11 +49,9 @@
                     {% endfor %}
                 </div>
                 <div id="page">
-                    <span><a href="/admin/manage?page=1">1</a></span>
-                    <span><a href="/admin/manage?page=2">2</a></span>
-                    <span><a href="/admin/manage?page=3">3</a></span>
-                    <span><a href="/admin/manage?page=4">4</a></span>
-                    <span><a href="/admin/manage?page=5">5</a></span>
+                    {% for alength in result %}
+                    <span><a href="/admin/manage?page={{loop.index}}">{{loop.index}}</a></span>
+                    {% endfor %}
                 </div>
             </div>
         </div>

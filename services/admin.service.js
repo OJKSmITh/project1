@@ -59,3 +59,9 @@ exports.uPaging = async (page) => {
     const result = await admin.userPaging(page)
     return result
 }
+
+exports.aNum = async () => {
+    const result = await admin.arrayNum()
+    return result
+}
+

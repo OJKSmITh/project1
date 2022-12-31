@@ -72,19 +72,16 @@ exports.paging = async (page) => {
 
 exports.userPaging = async (page) => {
     if (page === "1" || page === undefined) {
-        const [result] = await pool.query(`SELECT userId, level FROM user limit 1, 10`)
+        page = 1
+        const [result] = await pool.query(`SELECT userId, level FROM user limit ${page}, 10`)
         return result
-    } else if (page === "2") {
-        const [result] = await pool.query(`SELECT userId, level FROM user limit 12, 10`)
-        return result
-    } else if (page === "3") {
-        const [result] = await pool.query(`SELECT userId, level FROM user limit 22, 10`)
-        return result
-    } else if (page === "4") {
-        const [result] = await pool.query(`SELECT userId, level FROM user limit  32, 10`)
-        return result
-    } else if (page === "5") {
-        const [result] = await pool.query(`SELECT userId, level FROM user limit  42, 10`)
+    } else {
+        const [result] = await pool.query(`SELECT userId, level FROM user limit ${(page - 1) * 10 + 1}, 10`)
         return result
     }
+}
+
+exports.arrayNum = async () => {
+    const [[result]] = await pool.query(`SELECT COUNT(*) FROM user`)
+    return result
 }

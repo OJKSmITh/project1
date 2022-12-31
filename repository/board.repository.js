@@ -82,7 +82,6 @@ exports.paging = async (page) => {
         return result
     } else if (page === "2") {
         const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board limit 10, 10`)
-
         return result
     } else if (page === "3") {
         const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board limit 20, 10`)
@@ -94,7 +93,4 @@ exports.paging = async (page) => {
         const [result] = await pool.query(`SELECT idx, subject, content, writer, DATE_FORMAT(registerDate,'%Y-%m-%d') as registerDate, hit FROM board limit  40, 10`)
         return result
     }
-
 }
-
-
