@@ -38,15 +38,21 @@ bg_wrap.addEventListener('scroll', function () {    //스크롤시 이벤트가 
     if(bg_wrap.scrollTop > value2 * 1.75 * 5){
         bg_wrap.style.background = "url(/img/logo2.png) no-repeat 50% 50%"
     }
-    if(bg_wrap.scrollTop > 500) {
-        welcome.style.transform = "rotateX(-210dex)"
-        welcome.style.transform = "scale(1.3)"
-        welcome.style.transition = "all 0.5s"
-    }
+    // if(bg_wrap.scrollTop > 500) {
+    //     welcome.style.transform = "rotateX(-210dex)"
+    //     welcome.style.transform = "scale(1.3)"
+    //     welcome.style.transition = "all 0.5s"
+    // }
     if(bg_wrap.scrollTop > 1500) {
         welcome.style.transform = "rotateX(0dex)"
         welcome.style.transform = "scale(1)"
         welcome.style.transition = "all 0.5s"
+    }else if(500<=bg_wrap.scrollTop <= 1500){
+        welcome.style.transform = "rotateX(-210dex)"
+        welcome.style.transform = "scale(1.3)"
+        welcome.style.transition = "all 0.5s"
+    }else if (bg_wrap.scrollTop < 500) {
+        welcome.style.transform = "rotateX(90dex)"
     }
 })
 
