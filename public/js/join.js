@@ -10,20 +10,6 @@ const form = document.querySelector("#form")
 const userId = document.querySelector("#userId")
 const userName = document.querySelector("#userName")
 
-// let keyCodeArr1 = []
-// let keyCodeArr2 = []
-
-// function keyHandler(e){
-//     keyCodeArr1 += e.keyCode
-//     console.log(keyCodeArr1)
-// }
-// function keyHandler2(e){
-//     keyCodeArr2 += e.keyCode
-//     console.log(keyCodeArr2)
-// }
-
-// password.addEventListener("", keyHandler)
-// passwordCheck.addEventListener("keypress", keyHandler2)
 
 function checkPw() {
     console.log(password.value)
@@ -39,7 +25,14 @@ function checkPw() {
     }
 
 }
+function valueHandler (e){
+    e.preventDefault()
+    if (userId.value === "" ){
+        userId.focus()
+        userId.scrollIntoView(true)
+    }
 
+}
 passwordCheck.addEventListener("blur", checkPw)
 
 
@@ -64,18 +57,23 @@ for(let i = 0; i<10; i++){
     const clickHandler = (e) => {
         items.scrollTop += 105
     }
-    formItem[i].addEventListener("input", inputHandler)
-    formItem[i].addEventListener("input", clickHandler,{once : true})
-}
 
-function valueHandler (e){
-    e.preventDefault()
-    if (userId.value === "" ){
-        userId.focus()
-        userId.scrollIntoView(true)
+    const clickItemHandler = () =>{
+        formItem[i].classList = "itemAdd"
+    }
+    const clickItemHandler2 = () =>{
+        formItem[i].classList = "itemAdd2"
     }
 
+
+    
+    formItem[i].addEventListener("input", inputHandler)
+    formItem[i].addEventListener("input", clickHandler,{once : true})
+    formItem[i].addEventListener("click", clickItemHandler)
+    formItem[i].addEventListener("blur", clickItemHandler2)
 }
+
+
 
 form.addEventListener("submit", valueHandler )
 

@@ -66,14 +66,14 @@ ul, li{
     flex-direction: column;
     margin: 3rem auto 0;
     width: 90%;
-    height: 54.5rem;
+    height: 52.1rem;
     border-radius: 0.7rem;
     text-align: center;
     border: 1px solid #dadada;
 }
 ul{
     display: flex;
-    height: 5rem;
+    height: 4.6rem;
     justify-content: space-between;
     align-items: center;
     border-bottom: 0.1rem solid #ddd ;
