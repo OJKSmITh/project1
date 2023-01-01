@@ -18,7 +18,7 @@ exports.getWrite = async (req, res, next) => {
 exports.postWrite = async (req, res, next) => {
     const { token } = req.cookies
     const { subject, content } = req.body
-    if (subject === "" && content === "") return next(new Error("값을 넣어주세요"))
+    if (subject === "" || content === "") return next(new Error("내용을 넣어주세요"))
     const create = await service.postBoard(subject, content, token)
     const { idx } = await service.lastValue()
     res.redirect(`/board/view?idx=${idx}`)
