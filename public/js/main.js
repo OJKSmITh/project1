@@ -10,6 +10,8 @@ const popup = document.querySelector("#popup_wrap")
 const img = document.querySelector("#popup")
 const dp1 = document.querySelector("#view_wrap")
 const dp2 = document.querySelector("#popheader")
+const welcome = document.querySelector("#welcome")
+
 
 const gnbBtnHandler = (e) => {
     gnb.classList.toggle('gnbon')
@@ -27,18 +29,34 @@ bg_wrap.addEventListener('scroll', function () {    //스크롤시 이벤트가 
     if(bg_wrap.scrollTop < value2 * 1.78 ){
         bg_wrap.style.background = "url(/img/jang_bg.jpeg) no-repeat 50% 50%"
     }      
-    if(bg_wrap.scrollTop > value2 * 1.68){
+    if(bg_wrap.scrollTop > value2 * 1.78 * 2){
         bg_wrap.style.background = "url(/img/jang_bg.jpeg) no-repeat 50% 50% "
     }
-    if(bg_wrap.scrollTop > value2 * 1.78 * 2){
+    if(bg_wrap.scrollTop > value2 * 1.35 * 4){
         bg_wrap.style.background = "url(/img/baek_bg.jpeg) no-repeat 50% 50% "
     }    
-    if(bg_wrap.scrollTop > value2 * 1.9 * 3){
+    if(bg_wrap.scrollTop > value2 * 1.75 * 5){
         bg_wrap.style.background = "url(/img/logo2.png) no-repeat 50% 50%"
     }
-
-
+    // if(bg_wrap.scrollTop > 500) {
+    //     welcome.style.transform = "rotateX(-210dex)"
+    //     welcome.style.transform = "scale(1.3)"
+    //     welcome.style.transition = "all 0.5s"
+    // }
+    if(bg_wrap.scrollTop > 1500) {
+        welcome.style.transform = "rotateX(0dex)"
+        welcome.style.transform = "scale(1)"
+        welcome.style.transition = "all 0.5s"
+    }else if(500<=bg_wrap.scrollTop <= 1500){
+        welcome.style.transform = "rotateX(-210dex)"
+        welcome.style.transform = "scale(1.3)"
+        welcome.style.transition = "all 0.5s"
+    }else if (bg_wrap.scrollTop < 500) {
+        welcome.style.transform = "rotateX(90dex)"
+    }
 })
+
+
 
 playBtn.addEventListener("click", ()=>{
     const play = new Audio("/img/everland.mp3")
@@ -62,50 +80,36 @@ picBtn.addEventListener("click",()=>{
 
 
 
+let slideindex = 0
 const slideItems = document.querySelector("#slideItems")
-let slideindex = 1
 const prev = document.querySelector("#preBtn")
 const next = document.querySelector("#nextBtn")
 
+
+
 function slideshow (){
-    if(slideindex === 3) slideindex = 0
-    slideItems.style.left = -slideindex * 120 + 'rem' 
-    slideindex++
+    let index = slideindex === 2 ? 0 : ++slideindex
+    slideItems.style.left = -index * 120 + 'rem' 
+    slideindex = index
 }
+intervalId = setInterval(slideshow, 1500)
 
 
-function prevHandler (){
+function prevHandler (e){
     clearInterval(intervalId)
-    slideindex--
-    if(slideindex === -1) {
-        slideindex = 2
-    }   
-    slideItems.style.left = -slideindex * 120 + 'rem' 
-    let intervalId = setInterval(slideshow, 1500)
+    let index = slideindex === 0 ? 2 : --slideindex
+    slideItems.style.left = -index * 120 + 'rem' 
+    slideindex = index
+    intervalId = setInterval(slideshow, 1500)
 }
 
-function nextHandler(){
+function nextHandler(e){
     clearInterval(intervalId)
-    slideindex++
-    if(slideindex === 3) {
-        slideindex = 0
-    }   
-    slideItems.style.left = -slideindex * 120 + 'rem' 
-    let intervalId = setInterval(slideshow, 1500)
-
+    let index = slideindex === 2 ? 0 : ++slideindex
+    slideItems.style.left = -index * 120 + 'rem' 
+    slideindex = index
+    intervalId = setInterval(slideshow, 1500)
 }
-prev.addEventListener('click', prevHandler);
-next.addEventListener('click', nextHandler);
+prev.addEventListener('click', prevHandler)
+next.addEventListener('click', nextHandler)
 
-let intervalId = setInterval(slideshow, 1500)
-
-// next.addEventListener('click',  ()=> {
-//     clearInterval()
-//     console.log(slideindex)
-//     if (slideindex !== 1){
-//         slideindex += 1
-//     }else{
-//         slideindex = -1
-//     }
-//     slideshow
-// });
