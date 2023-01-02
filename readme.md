@@ -1,5 +1,6 @@
-<img align="center" src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Team3&fontSize=90" />
-
+<h1 align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Team3&fontSize=90" />
+<h1>
 <h1 align="center">
   <br>
   <a href="https://github.com/OJKSmITh/project1"><img src="https://user-images.githubusercontent.com/116360355/210193578-d3ac59c0-08dc-4bb3-a91e-6e489190d2c8.png" alt="환장의나라" width="200"></a>
@@ -369,5 +370,8 @@
 > [Github](https://github.com/OJKSmITh/project1) &nbsp;&middot;&nbsp;
 > 백종환 <a href="mailto:baekbr13@gmail.com">Send mail</a> &nbsp;&middot;&nbsp;
 > 장경호 <a href="mailto:csa0545@gmail.com">Send mail</a>
+  
+<h1 align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=footer&text=Thanks!&fontSize=90" />
+<h1>
 
-<img align="center" src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=footer&text=Thanks!&fontSize=90" />
