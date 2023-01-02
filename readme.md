@@ -12,7 +12,7 @@
 <br>
 <br>
 <h3 align="center">
-  <a href="#:bangbang: 구현해야할 필수 기능">필수 기능</a> •
+  <a href="#‼️구현해야할 필수 기능">필수 기능</a> •
   <a href="#Main">Main 페이지</a> •
   <a href="#Join">Join 페이지</a> •
   <a href="#Login">Login 페이지</a> •
