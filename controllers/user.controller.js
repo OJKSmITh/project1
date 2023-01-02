@@ -13,6 +13,7 @@ exports.postLogin = async (req, res, next) => {
             res.redirect(`/admin/main`)
         } else {
             res.setHeader("Set-Cookie", `token=${create.userId};path=/`)
+            res.cookie('cart', encodeURIComponent({ items: [1, 2, 3] }, { maxAge: 900000 }));
             res.redirect(`/user/main2`)
         }
     } else {
@@ -53,8 +54,12 @@ exports.idcheck = async (req, res, next) => {
     const { userId } = req.query
     const [result] = await service.fIdcheck(userId)
     if (result !== undefined) {
+        let chva = 0
+        chva += 1
         next(new Error("아이디가 중복됩니다. "))
     } else {
+        let chva = 0
+        chva += 1
         next(new Error("회원가입이 가능합니다."))
     }
 }

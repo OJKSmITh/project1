@@ -17,8 +17,8 @@ password.addEventListener("click", (e) => {
         msgEle.focus()
         msgEle.classList = "itemAdd"
         items.scrollTop -= 105
-    } else if (msgEle.value === "" && chva !== 1) {
-        chva = 1
+    } else if (msgEle.value === "" && chva !== 0) {
+        chva = 0
         msgEle.focus()
         alert("아이디 값을 입력해주세요")
     }
