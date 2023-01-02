@@ -1,4 +1,3 @@
-## :bangbang: 구현해야할 필수 기능
 
 
 1. DATABASE 생성
