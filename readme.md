@@ -37,7 +37,9 @@
   <img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"> 
   <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> 
 </h2>
+
 # 시연 영상
+
 <a href="https://youtu.be/NDrjzdRcOVA" >![screenshot](https://user-images.githubusercontent.com/112856532/210203867-59a9a6c1-6581-4c90-b2c2-2b3372ecc731.gif)</a>
 <br>
 <br>
